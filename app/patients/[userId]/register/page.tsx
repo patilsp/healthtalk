@@ -28,13 +28,13 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
         </div>
       </section>
 
-      <Image
+      {/* <Image
         src="/assets/images/register-img.png"
         height={1000}
         width={1000}
         alt="patient"
         className="side-img max-w-[390px]"
-      />
+      /> */}
     </div>
   );
 };

@@ -14,7 +14,7 @@ const AdminPage = async () => {
       <header className="admin-header">
         <Link href="/" className="cursor-pointer">
           <Image
-            src="/assets/icons/logo-full.svg"
+            src="/assets/icons/health-talk-logo.svg"
             height={32}
             width={162}
             alt="logo"
@@ -22,7 +22,7 @@ const AdminPage = async () => {
           />
         </Link>
 
-        <p className="text-16-semibold">Admin Dashboard</p>
+        <p className="text-16-semibold text-white">Admin Dashboard</p>
       </header>
 
       <main className="admin-main">

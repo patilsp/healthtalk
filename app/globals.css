@@ -114,7 +114,7 @@
 
   /* ==== Stat Card */
   .stat-card {
-    @apply flex flex-1 flex-col gap-6 rounded-2xl bg-cover p-6 shadow-lg;
+    @apply flex flex-1 flex-col text-white gap-6 rounded-2xl bg-cover p-6 shadow-lg;
   }
 
   /* ==== Status Badge */
@@ -198,7 +198,7 @@
   .shad-gray-btn {
     @apply border border-dark-500 cursor-pointer bg-dark-400 text-white !important;
   }
-
+ 
   .shad-input-label {
     @apply text-14-medium text-dark-700 !important;
   }
