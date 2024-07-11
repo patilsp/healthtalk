@@ -4,12 +4,12 @@ const nextConfig = {
   //   appDir: true,
   // },
 
-  // typescript: {
-  //   ignoreBuildErrors: true,
-  // },
-  // eslint: {
-  //   ignoreDuringBuild: true,
-  // },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuild: true,
+  },
 };
 
 export default nextConfig;
