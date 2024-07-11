@@ -20,8 +20,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
             alt="patient"
             className="mb-12 h-10 w-fit"
           />
-          {/* <h1> Health Talk </h1> */}
-
+        
           <PatientForm />
 
           <div className="text-14-regular mt-20 flex justify-between">
