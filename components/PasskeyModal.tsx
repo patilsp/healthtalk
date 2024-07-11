@@ -70,7 +70,7 @@ export const PasskeyModal = () => {
       <AlertDialogContent className="shad-alert-dialog">
         <AlertDialogHeader>
           <AlertDialogTitle className="flex items-start justify-between">
-            Admin Access Verification
+             <h1 className="text-green-500">Admin Access Verification </h1>
             <Image
               src="/assets/icons/close.svg"
               alt="close"

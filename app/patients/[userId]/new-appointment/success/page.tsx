@@ -18,11 +18,11 @@ const RequestSuccess = async ({
   );
 
   return (
-    <div className=" flex h-screen max-h-screen px-[5%]">
+    <div className="card-container flex h-screen max-h-screen px-[10%]">
       <div className="success-img">
         <Link href="/">
           <Image
-            src="/assets/icons/logo-full.svg"
+            src="/assets/icons/health-talk-logo.svg"
             height={1000}
             width={1000}
             alt="logo"
@@ -41,11 +41,11 @@ const RequestSuccess = async ({
             Your <span className="text-green-500">appointment request</span> has
             been successfully submitted!
           </h2>
-          <p>We&apos;ll be in touch shortly to confirm.</p>
+          <p className="text-gray-50">We&apos;ll be in touch shortly to confirm.</p>
         </section>
 
         <section className="request-details">
-          <p>Requested appointment details: </p>
+          <p className="text-gray-50">Requested appointment details: </p>
           <div className="flex items-center gap-3">
             <Image
               src={doctor?.image!}
@@ -54,7 +54,7 @@ const RequestSuccess = async ({
               height={100}
               className="size-6"
             />
-            <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+            <p className="whitespace-nowrap text-gray-50">Dr. {doctor?.name}</p>
           </div>
           <div className="flex gap-2">
             <Image
@@ -63,7 +63,7 @@ const RequestSuccess = async ({
               width={24}
               alt="calendar"
             />
-            <p> {formatDateTime(appointment.schedule).dateTime}</p>
+            <p className="text-gray-50"> {formatDateTime(appointment.schedule).dateTime}</p>
           </div>
         </section>
 
@@ -73,7 +73,7 @@ const RequestSuccess = async ({
           </Link>
         </Button>
 
-        <p className="copyright">© 2024 CarePluse</p>
+        <p className="copyright">© 2024 Health Talk</p>
       </div>
     </div>
   );
