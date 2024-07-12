@@ -1,11 +1,5 @@
 <div align="center">
-  <br />
-    <a href="#" target="_blank">
-      ![image](https://github.com/user-attachments/assets/25cfe567-95e5-4f0c-97dc-e44a191141f7)
 
-
-    </a>
-  <br />
 
   <div>
     <img src="https://img.shields.io/badge/-Next_JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000" alt="nextdotjs" />
