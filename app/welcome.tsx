@@ -10,25 +10,10 @@ export const Welcome = () => {
   };
 
   return (
-    // <div className="flex min-h-screen flex-col items-center justify-center p-4">
-    //   <h1 className="mb-4 text-3xl font-bold">Welcome to Health Talk!</h1>
-    //   <p className="mb-8 text-lg">Your one-stop solution for managing healthcare appointments.</p>
-    //   <button
-    //     onClick={handleGetStarted}
-    //     className="rounded-lg bg-blue-500 px-6 py-2 text-white hover:bg-blue-600"
-    //   >
-    //     Get Started
-    //   </button>
-    // </div>
     <div className="flex min-h-screen flex-col items-center justify-center p-4">
       <div className="mx-auto flex w-full flex-col items-center space-y-8">
         <div
-          className="text-white max-w-4xl rounded-full px-12 py-3"
-          style={{
-            background:
-              "linear-gradient(91deg, rgba(206, 206, 206, 0.07) 9.41%, rgba(255, 255, 255, 0.07) 146.46%, rgba(2, 255, 255, 0.00) 204.33%, rgba(255, 19, 2, 0.07) 204.33%)",
-          }}
-        >
+          className="max-w-4xl rounded-full bg-slate-500 px-12 py-3 text-white">
           Over 1K people have become part of our Health Talk 🎉
         </div>
 
@@ -39,7 +24,7 @@ export const Welcome = () => {
           Welcome to Health Talk
         </h1>
 
-        <p className="text-xl text-white">
+        <p className="text-xl text-black">
           Connect with a vibrant community of health enthusiasts and professionals. 
          
         </p>
@@ -47,12 +32,7 @@ export const Welcome = () => {
         <Link href="/sign-up">
           <button
             onClick={handleGetStarted}
-            className="rounded-full px-20 py-4 text-white"
-            style={{
-              background:
-                "linear-gradient(91deg, #2FBEFF 7.38%, #1A67DC 92.4%, rgba(255, 255, 255, 0.90) 126.21%, rgba(44, 189, 255, 0.29) 161.04%, rgba(38, 13, 192, 0.00) 224.67%, rgba(108, 84, 255, 0.00) 224.67%)",
-            }}
-          >
+            className="btn-primary">
             Get Started
           </button>
         </Link>

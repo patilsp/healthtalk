@@ -18,18 +18,8 @@ const RequestSuccess = async ({
   );
 
   return (
-    <div className="card-container flex h-screen max-h-screen px-[10%]">
+    <div className="card-container mb-4 flex h-screen max-h-screen px-[10%]">
       <div className="success-img">
-        <Link href="/">
-          <Image
-            src="/assets/icons/health-talk-logo.svg"
-            height={1000}
-            width={1000}
-            alt="logo"
-            className="h-10 w-fit"
-          />
-        </Link>
-
         <section className="flex flex-col items-center">
           <Image
             src="/assets/gifs/success.gif"
@@ -67,13 +57,11 @@ const RequestSuccess = async ({
           </div>
         </section>
 
-        <Button variant="outline" className="shad-primary-btn" asChild>
+        <Button variant="outline" className="btn-primary" asChild>
           <Link href={`/patients/${userId}/new-appointment`}>
             New Appointment
           </Link>
         </Button>
-
-        <p className="copyright">© 2024 Health Talk</p>
       </div>
     </div>
   );

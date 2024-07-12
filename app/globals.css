@@ -2,8 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ========================================== TAILWIND STYLES */
+
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+  }
+
   /* Remove scrollbar */
   .remove-scrollbar::-webkit-scrollbar {
     width: 0px;
@@ -53,7 +98,7 @@
   }
 
   .sub-header {
-    @apply text-white text-18-bold md:text-24-bold;
+    @apply text-gray-600 text-18-bold md:text-24-bold;
   }
 
   .container {
@@ -87,7 +132,7 @@
   }
 
   .admin-main {
-    @apply flex flex-col items-center space-y-6 px-[5%] pb-12 xl:space-y-12 xl:px-12;
+    @apply flex flex-col items-center space-y-8 px-[5%] pb-12 xl:space-y-14 xl:px-12;
   }
 
   .admin-stat {
@@ -96,7 +141,7 @@
 
   /* ==== FORM */
   .radio-group {
-    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500 bg-dark-400 p-3;
+    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500 bg-white p-3;
   }
 
   .checkbox-label {
@@ -105,7 +150,7 @@
 
   /* ==== File Upload */
   .file-upload {
-    @apply text-12-regular flex cursor-pointer  flex-col items-center justify-center gap-3 rounded-md border border-dashed border-dark-500 bg-dark-400 p-5;
+    @apply text-12-regular flex cursor-pointer  flex-col items-center justify-center gap-3 rounded-md border border-dashed border-dark-500 bg-white p-5;
   }
 
   .file-upload_label {
@@ -181,9 +226,18 @@
     @apply text-[12px] leading-[16px] font-semibold;
   }
 
-  /* =====  SHADCN OVERRIDES */
+  .btn-primary{
+    background-color: #6c47ff;
+    color: #fff;
+    font-family: Inter, system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+  }
   .shad-primary-btn {
-    background-image: linear-gradient(76.35deg, #801ae6 15.89%, #a21ae6 89.75%);
+    background-image: linear-gradient(76.35deg, #6c47ff 15.89%, #6c47ff 89.75%);
     border-color: hsl(270, 60%, 52%);
     color: #fff;
     font-weight: 600
@@ -196,43 +250,45 @@
   }
 
   .shad-gray-btn {
-    @apply border border-dark-500 cursor-pointer bg-dark-400 text-white !important;
+    @apply border border-dark-500 cursor-pointer bg-white text-white !important;
   }
- 
+
+
+/*  
   .shad-input-label {
     @apply text-14-medium text-dark-700 !important;
   }
 
   .shad-input {
-    @apply bg-dark-400 placeholder:text-dark-600 text-white border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   .shad-input-icon {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-white placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-textArea {
-    @apply bg-dark-400 placeholder:text-dark-600 border-dark-500 text-white focus-visible:ring-0 focus-visible:ring-offset-0 !important;
+    @apply bg-white placeholder:text-dark-600 border-dark-500 text-white focus-visible:ring-0 focus-visible:ring-offset-0 !important;
   }
 
   .shad-combobox-item {
     @apply data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 !important;
-  }
+  } */
 
   .shad-combobox-trigger {
     @apply h-11 !important;
   }
 
-  .shad-select-trigger {
-    @apply bg-dark-400  placeholder:text-dark-600 border-dark-500 text-white h-11 focus:ring-0 focus:ring-offset-0 !important;
-  }
+  /* .shad-select-trigger {
+    @apply bg-white  placeholder:text-dark-600 border-dark-500 text-white h-11 focus:ring-0 focus:ring-offset-0 !important;
+  } */
 
   .shad-select-content {
-    @apply bg-dark-400 border-dark-500 !important;
+    @apply bg-white border-dark-500 !important;
   }
 
   .shad-dialog {
-    @apply bg-dark-400 border-dark-500 !important;
+    @apply bg-white border-dark-500 !important;
   }
 
   .shad-dialog button {
@@ -247,13 +303,13 @@
     @apply rounded-lg overflow-hidden !important;
   }
 
-  .shad-table-row-header {
+  /* .shad-table-row-header {
     @apply border-b border-dark-400 text-light-200 hover:bg-transparent !important;
   }
 
   .shad-table-row {
     @apply border-b border-dark-400 text-light-200 !important;
-  }
+  } */
 
   .shad-otp {
     @apply w-full flex justify-between !important;
@@ -264,7 +320,7 @@
   }
 
   .shad-alert-dialog {
-    @apply space-y-5 bg-dark-400 border-dark-500 outline-none !important;
+    @apply space-y-5 bg-white border-dark-500 outline-none !important;
   }
 
   .shad-sheet-content button {
@@ -273,7 +329,7 @@
 
   /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
   .input-phone {
-    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-dark-400 placeholder:text-dark-600 border-dark-500 !important;
+    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-white placeholder:text-dark-600 border-dark-500 !important;
   }
 
   /* =====  REACT DATE PICKER OVERRIDES */
@@ -317,16 +373,13 @@
 }
 
 .react-datepicker__input-container input {
-  background-color: #1a1d21 !important;
   width: 100%;
   outline: none;
-  color: #fff;
 }
 .card-container{
   box-shadow: rgba(132, 59, 206, 0.15) 0px 4px 24px;
   border-color: hsl(270, 45%, 24%);
   background-color: hsl(250, 24%, 9%);
-  border-radius: 8px
 }
 
 .react-datepicker__day--selected {
@@ -352,12 +405,26 @@
 .PhoneInputInput {
   outline: none;
   margin-left: 4px;
-  background: #1a1d21;
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
 }
 
 .PhoneInputInput::placeholder {
   color: #1a1d21;
+}
+
+
+.cl-internal-180wb59:has(div:only-child) {
+  display: none !important;
+}
+
+.dev-banner {
+ display: none !important;
+}
+
+.cl-internal-ttumny{
+  background-color: #6c47ff !important;
+  border-color: #6c47ff !important;
+  color: #fff !important;
+  box-shadow: none !important;
 }
