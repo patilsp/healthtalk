@@ -26,7 +26,7 @@ export function SiteHeader() {
               <ModeToggle />
 
               {userId == null ? (
-                  <Link href='sign-in' className='btn-primary bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-8 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50'>
+                  <Link href='sign-in' className='btn-primary bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-8 items-center justify-center rounded px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50'>
                     Sign In
                   </Link>
                 ) : (                  
@@ -36,8 +36,7 @@ export function SiteHeader() {
           </nav>
           
           <Link href="/?admin=true" className="relative  ml-2 p-[3px]">
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500" />
-            <div className="group relative rounded-[6px]  bg-black px-4 py-1 text-white transition duration-200 hover:bg-transparent">
+            <div className="relative rounded bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-1 text-white transition duration-200 hover:bg-transparent">
               Admin
             </div>
           </Link>

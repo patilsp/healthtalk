@@ -21,7 +21,7 @@ export function MainNav() {
           className="h-8 w-fit"
         />
       </Link>
-      <nav className="flex items-center space-x-6 text-sm font-medium">
+      <nav className="flex items-center space-x-6 text-l font-bold">
         <Link
           href="/"
           className={cn(
@@ -32,38 +32,38 @@ export function MainNav() {
           Home
           {pathname === "/" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
         </Link>
-
         <Link
-          href="/dashboard"
+          href="/doctors"
           className={cn(
             "relative transition-colors hover:text-foreground/80",
-            pathname === "/dashboard" ? "text-active" : "text-foreground/60"
+            pathname === "/doctors" ? "text-active" : "text-foreground/60"
+          )}
+        >
+          Doctors
+          {pathname === "/doctors" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
+        </Link>
+        <Link
+          href="/about-us"
+          className={cn(
+            "relative transition-colors hover:text-foreground/80",
+            pathname === "/about-us" ? "text-active" : "text-foreground/60"
           )}
         >
           About Us
-          {pathname === "/dashboard" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
+          {pathname === "/about-us" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
         </Link>
         <Link
-          href="/help"
+          href="/why-choose-us"
           className={cn(
             "relative transition-colors hover:text-foreground/80",
-            pathname === "/help" ? "text-active" : "text-foreground/60"
+            pathname === "/why-choose-us" ? "text-active" : "text-foreground/60"
           )}
         >
-          How it Works
-          {pathname === "/help" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
+          Why Choose Us
+          {pathname === "/why-choose-us" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
         </Link>
-        <Link
-          href="/doctor"
-          className={cn(
-            "relative transition-colors hover:text-foreground/80",
-            pathname === "/doctor" ? "text-active" : "text-foreground/60"
-          )}
-        >
-          Doctor
-          {pathname === "/doctor" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
-        </Link>
-        <Link
+        
+        {/* <Link
           href="/contactus"
           className={cn(
             "relative transition-colors hover:text-foreground/80",
@@ -72,7 +72,7 @@ export function MainNav() {
         >
           Contact Us
           {pathname === "/contactus" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
-        </Link>
+        </Link> */}
 
       </nav>
     </div>

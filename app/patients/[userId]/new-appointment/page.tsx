@@ -7,34 +7,25 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   const patient = await getPatient(userId);
 
   return (
-    <div className="flex h-screen max-h-screen">
-      <section className="remove-scrollbar container my-auto">
-        <div className="sub-container flex-1 justify-between">
-          {/* <Image
-            src="/assets/icons/health-talk-logo.svg"
-            height={1000}
-            width={1000}
-            alt="logo"
-            className="mb-12 h-10 w-fit"
-          /> */}
-
-          <AppointmentForm
-            patientId={patient?.$id}
-            userId={userId}
-            type="create"
-          />
-
-          <p className="copyright mt-10 py-12"></p>
-        </div>
-      </section>
-
+    <div className="flex h-screen max-h-screen py-2">
+      
       <Image
-        src="/assets/images/appointment.jpg"
+        src="/assets/images/img-2.jpg"
         height={1500}
         width={1500}
         alt="appointment"
         className="side-img max-w-[50%] bg-bottom"
       />
+      <div className="card remove-scrollbar container max-w-[600px] w-full">
+        <div className="sub-container flex-1 justify-between">
+          <AppointmentForm
+            patientId={patient?.$id}
+            userId={userId}
+            type="create"
+          />
+        </div>
+      </div>
+
     </div>
   );
 };

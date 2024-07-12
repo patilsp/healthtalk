@@ -64,14 +64,23 @@ export const PatientForm = () => {
 
   return (
 
-    <section className="w-full h-screen flex flex-col lg:flex-row">  
+    <section className="w-full h-screen flex flex-col lg:flex-row">
+      <div className="lg:w-1/2 items-center justify-center hidden lg:flex">
+        <Image
+          src="/assets/images/coming-soon.png"
+          width={800}
+          height={800}
+          alt="doctor"
+          className="h-full rounded"
+        />
+      </div>  
       <div className="lg:w-1/2 flex items-center justify-center">
-        <div className="container max-w-[450px] lg:max-w-none w-full">
+        <div className="max-w-[400px] w-full">
           <Form {...form} className="mx-auto w-full max-w-lg">
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <section className="mb-12 space-y-4 text-center lg:text-left">
                 <h1 className="text-2xl lg:text-3xl">Hi there 👋</h1>
-                <p className="text-dark-700">Get started with appointments.</p>
+                <p className="text-dark-500">Get started with appointments.</p>
               </section>
     
               <CustomFormField
@@ -105,15 +114,7 @@ export const PatientForm = () => {
           </Form>
         </div>
       </div>
-      <div className="lg:w-1/2 items-center justify-center hidden lg:flex">
-        <Image
-          src="/assets/images/image-1.jpg"
-          width={1000}
-          height={1000}
-          alt="doctor"
-          className="h-full rounded"
-        />
-      </div>
+      
   </section>
   
 

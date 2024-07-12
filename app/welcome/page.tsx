@@ -22,7 +22,7 @@ export const Welcome = () => {
   }, [isSignedIn, router]);
 
   return (
-    <div className="relative flex min-h-screen flex-col md:flex-row">
+    <section className="relative flex min-h-screen flex-col md:flex-row">
     {/* Left Side */}
     <div className="relative flex flex-col justify-center w-full md:w-1/2 p-6 bg-white md:bg-transparent">
       <motion.div
@@ -85,13 +85,16 @@ export const Welcome = () => {
       <motion.img
         src="/assets/images/appointment.jpg"
         alt="Welcome Image"
-        className="object-cover size-full"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        className="object-cover size-full transition hover:scale-110"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
       />
     </div>
-  </div>
+    
+  </section>
+
+  
   );
 };
 
