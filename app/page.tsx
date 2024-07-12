@@ -11,7 +11,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
   const isAdmin = searchParams?.admin === "true";
   const { user, isLoaded } = useUser();
 
-  if (!isLoaded) return <div className="flex h-full min-h-screen flex-col">Loading...</div>;
+  if (!isLoaded) return <div className="flex items-center justify-center h-screen text-black">Loading...</div>;
 
   return (
 
@@ -19,7 +19,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
       {/* Passkey Modal if admin */}
       {isAdmin && <PasskeyModal />}
       
-        <div className="p-2">
+        <div className="card">
           {user ? (
             <PatientForm />
           ) : (

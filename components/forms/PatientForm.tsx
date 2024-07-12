@@ -1,7 +1,7 @@
 "use client";
-
 import { useUser } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -64,47 +64,58 @@ export const PatientForm = () => {
 
   return (
 
-     <section className="size-full max-w-3xl py-4">  
-      {/* Form Section */}
-      <div className="container max-w-[500px]">
-        <Form {...form} className="mx-auto w-full max-w-lg">
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <section className="mb-12 space-y-4 text-center md:text-left">
-              <h1 className="text-2xl md:text-3xl">Hi there 👋</h1>
-              <p className="text-dark-700">Get started with appointments.</p>
-            </section>
-
-            <CustomFormField
-              fieldType={FormFieldType.INPUT}
-              control={form.control}
-              name="name"
-              label="Full name"
-              placeholder="John Doe"
-              iconAlt="user"
-            />
-
-            <CustomFormField
-              fieldType={FormFieldType.INPUT}
-              control={form.control}
-              name="email"
-              label="Email"
-              placeholder="johndoe@gmail.com"
-              iconAlt="email"
-            />
-
-            <CustomFormField
-              fieldType={FormFieldType.INPUT}
-              control={form.control}
-              name="phone"
-              label="Phone number"
-              placeholder="(555) 123-4567"
-            />
-
-            <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
-          </form>
-        </Form>
+    <section className="w-full h-screen flex flex-col lg:flex-row">  
+      <div className="lg:w-1/2 flex items-center justify-center">
+        <div className="container max-w-[450px] lg:max-w-none w-full">
+          <Form {...form} className="mx-auto w-full max-w-lg">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <section className="mb-12 space-y-4 text-center lg:text-left">
+                <h1 className="text-2xl lg:text-3xl">Hi there 👋</h1>
+                <p className="text-dark-700">Get started with appointments.</p>
+              </section>
+    
+              <CustomFormField
+                fieldType={FormFieldType.INPUT}
+                control={form.control}
+                name="name"
+                label="Full name"
+                placeholder="John Doe"
+                iconAlt="user"
+              />
+    
+              <CustomFormField
+                fieldType={FormFieldType.INPUT}
+                control={form.control}
+                name="email"
+                label="Email"
+                placeholder="johndoe@gmail.com"
+                iconAlt="email"
+              />
+    
+              <CustomFormField
+                fieldType={FormFieldType.INPUT}
+                control={form.control}
+                name="phone"
+                label="Phone number"
+                placeholder="(555) 123-4567"
+              />
+    
+              <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
+            </form>
+          </Form>
+        </div>
       </div>
-      </section>
+      <div className="lg:w-1/2 items-center justify-center hidden lg:flex">
+        <Image
+          src="/assets/images/image-1.jpg"
+          width={1000}
+          height={1000}
+          alt="doctor"
+          className="h-full rounded"
+        />
+      </div>
+  </section>
+  
 
   );
 };

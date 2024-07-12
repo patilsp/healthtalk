@@ -62,7 +62,11 @@ export function CommandMenu({ ...props }: DialogProps) {
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
-      <CommandDialog className="bg-slate-400 z-auto" open={open} onOpenChange={setOpen}>
+      <CommandDialog
+        className="fixed top-0 left-0 size-full bg-slate-400 z-[9999]"
+        open={open}
+        onOpenChange={setOpen}
+      >
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>

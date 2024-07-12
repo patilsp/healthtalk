@@ -49,7 +49,7 @@
   }
 }
 .card {
-  @apply rounded-lg border border-gray-200 bg-white/20 p-5 shadow-sm backdrop-blur-md;
+  @apply rounded-lg border border-gray-200 bg-white/20 shadow-sm backdrop-blur-md;
 }
 .shad-input-label {
   @apply text-sm font-medium text-gray-700 dark:text-gray-300;
@@ -133,6 +133,13 @@
 h1 {
   @apply text-3xl font-extrabold uppercase bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent ml-1 mt-2 mb-5 transition-all duration-200;
 }
+
+
+.title-font-size{
+  @apply text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-left dark:text-white;
+}
+
+
 .cl-internal-b3fm6y,
 .cl-internal-uyu30o,
 .dev-banner,
@@ -153,5 +160,20 @@ h1 {
 
 /* Header title */
 .cl-headerTitle {
-  @apply text-3xl font-extrabold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent transition-all duration-200;
+  @apply text-2xl font-extrabold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent transition-all duration-200;
+}
+
+.cl-internal-ttumny[data-variant="solid"][data-color="primary"] {
+  box-shadow: none !important;
+}
+.cl-internal-ttumny[data-variant="solid"][data-color="primary"]:hover {
+  --tw-border-opacity: 1;
+    border-color: rgb(79 70 229 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
+.z-1000{
+  z-index: 1000 !important;
+  
 }

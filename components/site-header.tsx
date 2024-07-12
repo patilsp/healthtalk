@@ -26,7 +26,7 @@ export function SiteHeader() {
               <ModeToggle />
 
               {userId == null ? (
-                  <Link href='sign-in' className='bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-8 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50'>
+                  <Link href='sign-in' className='btn-primary bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-8 items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50'>
                     Sign In
                   </Link>
                 ) : (                  
