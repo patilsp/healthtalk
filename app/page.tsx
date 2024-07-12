@@ -5,7 +5,7 @@ import { useUser } from '@clerk/nextjs';
 import { PatientForm } from '@/components/forms/PatientForm';
 import { PasskeyModal } from '@/components/PasskeyModal';
 
-import { Welcome } from './welcome';
+import { Welcome } from './welcome/page';
 
 const Home = ({ searchParams }: SearchParamProps) => {
   const isAdmin = searchParams?.admin === "true";
@@ -18,14 +18,13 @@ const Home = ({ searchParams }: SearchParamProps) => {
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       {/* Passkey Modal if admin */}
       {isAdmin && <PasskeyModal />}
-      
-        <div className="card">
+
           {user ? (
             <PatientForm />
           ) : (
             <Welcome />
           )}
-        </div>
+      
     </section>
 
   );

@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 
 
-const Welcome = () => {
+export const Welcome = () => {
   const router = useRouter();
   const { isSignedIn } = useUser();
   const [doctor, setDoctor] = useState("");
@@ -95,4 +95,3 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
