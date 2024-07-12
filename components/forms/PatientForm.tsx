@@ -64,13 +64,13 @@ export const PatientForm = () => {
 
   return (
 
-     <section className="size-full max-w-3xl px-4">  
+     <section className="size-full max-w-3xl py-4">  
       {/* Form Section */}
       <div className="container max-w-[500px]">
         <Form {...form} className="mx-auto w-full max-w-lg">
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <section className="mb-12 space-y-4 text-center md:text-left">
-              <h1 className="header text-2xl md:text-3xl">Hi there 👋</h1>
+              <h1 className="text-2xl md:text-3xl">Hi there 👋</h1>
               <p className="text-dark-700">Get started with appointments.</p>
             </section>
 
@@ -80,7 +80,6 @@ export const PatientForm = () => {
               name="name"
               label="Full name"
               placeholder="John Doe"
-              iconSrc="/assets/icons/user.svg"
               iconAlt="user"
             />
 
@@ -90,12 +89,11 @@ export const PatientForm = () => {
               name="email"
               label="Email"
               placeholder="johndoe@gmail.com"
-              iconSrc="/assets/icons/email.svg"
               iconAlt="email"
             />
 
             <CustomFormField
-              fieldType={FormFieldType.PHONE_INPUT}
+              fieldType={FormFieldType.INPUT}
               control={form.control}
               name="phone"
               label="Phone number"

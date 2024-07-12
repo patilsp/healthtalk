@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -48,383 +47,111 @@
     --input: 215 27.9% 16.9%;
     --ring: 263.4 70% 50.4%;
   }
-
-  /* Remove scrollbar */
-  .remove-scrollbar::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    border-radius: 0px;
-  }
-
-  .remove-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .remove-scrollbar::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 0px;
-  }
-
-  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
-    /* background: #1e2238; */
-    background: transparent;
-  }
+}
+.card {
+  @apply rounded-lg border border-gray-200 bg-white/20 p-5 shadow-sm backdrop-blur-md;
+}
+.shad-input-label {
+  @apply text-sm font-medium text-gray-700 dark:text-gray-300;
+}
+.shad-input {
+  @apply flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm placeholder:text-gray-500 transition-colors focus:outline-none focus:ring-2  dark:border-gray-600 dark:bg-transparent dark:text-white dark:placeholder-gray-400 ;
+}
+.shad-input-icon {
+  @apply flex items-center justify-center h-11 w-11 rounded-md border border-gray-300 bg-white text-gray-600 dark:border-gray-600 dark:bg-transparent dark:text-white;
+}
+.shad-textArea {
+  @apply flex w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm placeholder:text-gray-500 transition-colors focus:outline-none focus:ring-2  dark:border-gray-600 dark:bg-transparent dark:text-white dark:placeholder-gray-400 ;
 }
 
-@layer utilities {
-  /* ===== UTILITIES */
-  .sidebar {
-    @apply remove-scrollbar w-full max-w-72 flex-col overflow-auto bg-black-800 px-7 py-10;
-  }
-
-  .left-sidebar {
-    @apply hidden lg:flex;
-  }
-
-  .right-sidebar {
-    @apply hidden xl:flex;
-  }
-
-  .clip-text {
-    @apply bg-clip-text text-transparent;
-  }
-
-  .bg-image {
-    @apply bg-black-900 bg-light-rays bg-cover bg-no-repeat;
-  }
-
-  .header {
-    @apply text-green-500 text-32-bold md:text-36-bold;
-  }
-
-  .sub-header {
-    @apply text-gray-600 text-18-bold md:text-24-bold;
-  }
-
-  .container {
-    @apply relative flex-1 overflow-y-auto px-[5%];
-  }
-
-  .sub-container {
-    @apply mx-auto flex size-full flex-col py-10;
-  }
-
-  .side-img {
-    @apply hidden h-full object-cover md:block;
-  }
-
-  .copyright {
-    @apply text-14-regular justify-items-end text-center text-dark-600 xl:text-left;
-  }
-
-  /* ==== SUCCESS */
-  .success-img {
-    @apply m-auto flex flex-1 flex-col items-center justify-between gap-10 py-10;
-  }
-
-  .request-details {
-    @apply flex w-full flex-col items-center gap-8 border-y-2 border-dark-400 py-8 md:w-fit md:flex-row;
-  }
-
-  /* ===== ADMIN */
-  .admin-header {
-    @apply sticky top-3 z-20 mx-3 flex items-center justify-between rounded-2xl bg-dark-200 px-[5%] py-5 shadow-lg xl:px-12;
-  }
-
-  .admin-main {
-    @apply flex flex-col items-center space-y-8 px-[5%] pb-12 xl:space-y-14 xl:px-12;
-  }
-
-  .admin-stat {
-    @apply flex w-full flex-col justify-between gap-5 sm:flex-row xl:gap-10;
-  }
-
-  /* ==== FORM */
-  .radio-group {
-    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-dark-500 bg-white p-3;
-  }
-
-  .checkbox-label {
-    @apply cursor-pointer text-sm font-medium text-dark-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70 md:leading-none;
-  }
-
-  /* ==== File Upload */
-  .file-upload {
-    @apply text-12-regular flex cursor-pointer  flex-col items-center justify-center gap-3 rounded-md border border-dashed border-dark-500 bg-white p-5;
-  }
-
-  .file-upload_label {
-    @apply flex flex-col justify-center gap-2 text-center text-dark-600;
-  }
-
-  /* ==== Stat Card */
-  .stat-card {
-    @apply flex flex-1 flex-col text-white gap-6 rounded-2xl bg-cover p-6 shadow-lg;
-  }
-
-  /* ==== Status Badge */
-  .status-badge {
-    @apply flex w-fit items-center gap-2 rounded-full px-4 py-2;
-  }
-
-  /* Data Table */
-  .data-table {
-    @apply z-10 w-full overflow-hidden rounded-lg border border-dark-400 shadow-lg;
-  }
-
-  .table-actions {
-    @apply flex w-full items-center justify-between space-x-2 p-4;
-  }
-
-  /* ===== ALIGNMENTS */
-  .flex-center {
-    @apply flex items-center justify-center;
-  }
-
-  .flex-between {
-    @apply flex items-center justify-between;
-  }
-
-  /* ===== TYPOGRAPHY */
-  .text-36-bold {
-    @apply text-[36px] leading-[40px] font-bold;
-  }
-
-  .text-24-bold {
-    @apply text-[24px] leading-[28px] font-bold;
-  }
-
-  .text-32-bold {
-    @apply text-[32px] leading-[36px] font-bold;
-  }
-
-  .text-18-bold {
-    @apply text-[18px] leading-[24px] font-bold;
-  }
-
-  .text-16-semibold {
-    @apply text-[16px] leading-[20px] font-semibold;
-  }
-
-  .text-16-regular {
-    @apply text-[16px] leading-[20px] font-normal;
-  }
-
-  .text-14-medium {
-    @apply text-[14px] leading-[18px] font-medium;
-  }
-
-  .text-14-regular {
-    @apply text-[14px] leading-[18px] font-normal;
-  }
-
-  .text-12-regular {
-    @apply text-[12px] leading-[16px] font-normal;
-  }
-
-  .text-12-semibold {
-    @apply text-[12px] leading-[16px] font-semibold;
-  }
-
-  .btn-primary{
-    background-color: #6c47ff;
-    color: #fff;
-    font-family: Inter, system-ui, sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    padding: 1rem 2rem;
-    text-align: center;
-    border-radius: 8px;
-  }
-  .shad-primary-btn {
-    background-image: linear-gradient(76.35deg, #6c47ff 15.89%, #6c47ff 89.75%);
-    border-color: hsl(270, 60%, 52%);
-    color: #fff;
-    font-weight: 600
-  }
-  .shad-primary-btn:hover{
-    border-color: #fff;
-  }
-  .shad-danger-btn {
-    @apply bg-red-700 text-white !important;
-  }
-
-  .shad-gray-btn {
-    @apply border border-dark-500 cursor-pointer bg-white text-white !important;
-  }
-
-
-/*  
-  .shad-input-label {
-    @apply text-14-medium text-dark-700 !important;
-  }
-
-  .shad-input {
-    @apply flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50;
-  }
-
-  .shad-input-icon {
-    @apply bg-white placeholder:text-dark-600 border-dark-500 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 !important;
-  }
-
-  .shad-textArea {
-    @apply bg-white placeholder:text-dark-600 border-dark-500 text-white focus-visible:ring-0 focus-visible:ring-offset-0 !important;
-  }
-
-  .shad-combobox-item {
-    @apply data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 !important;
-  } */
-
-  .shad-combobox-trigger {
-    @apply h-11 !important;
-  }
-
-  /* .shad-select-trigger {
-    @apply bg-white  placeholder:text-dark-600 border-dark-500 text-white h-11 focus:ring-0 focus:ring-offset-0 !important;
-  } */
-
-  .shad-select-content {
-    @apply bg-white border-dark-500 !important;
-  }
-
-  .shad-dialog {
-    @apply bg-white border-dark-500 !important;
-  }
-
-  .shad-dialog button {
-    @apply focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
-  }
-
-  .shad-error {
-    @apply text-red-400 !important;
-  }
-
-  .shad-table {
-    @apply rounded-lg overflow-hidden !important;
-  }
-
-  /* .shad-table-row-header {
-    @apply border-b border-dark-400 text-light-200 hover:bg-transparent !important;
-  }
-
-  .shad-table-row {
-    @apply border-b border-dark-400 text-light-200 !important;
-  } */
-
-  .shad-otp {
-    @apply w-full flex justify-between !important;
-  }
-
-  .shad-otp-slot {
-    @apply text-36-bold justify-center flex border border-dark-500 rounded-lg size-16 gap-4 !important;
-  }
-
-  .shad-alert-dialog {
-    @apply space-y-5 bg-white border-dark-500 outline-none !important;
-  }
-
-  .shad-sheet-content button {
-    @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
-  }
-
-  /* =====  REACT PHONE NUMBER INPUT OVERRIDES */
-  .input-phone {
-    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-white placeholder:text-dark-600 border-dark-500 !important;
-  }
-
-  /* =====  REACT DATE PICKER OVERRIDES */
-  .date-picker {
-    @apply overflow-hidden border-transparent w-full placeholder:text-dark-600  h-11 text-14-medium rounded-md px-3 outline-none !important;
-  }
+.date-input{
+  @apply flex h-11 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300;
 }
 
-/* =====  REACT-DATEPICKER OVERRIDES */
-.react-datepicker-wrapper.date-picker {
-  display: flex;
-  align-items: center;
+.shad-select-content {
+  @apply bg-white border-dark-500 !important;
 }
 
-.react-datepicker,
-.react-datepicker__time,
-.react-datepicker__header,
-.react-datepicker__current-month,
-.react-datepicker__day-name,
-.react-datepicker__day,
-.react-datepicker-time__header {
-  background-color: #1a1d21 !important;
-  border-color: #363a3d !important;
-  color: #abb8c4 !important;
+.shad-dialog {
+  @apply bg-white border-dark-500 !important;
 }
 
-.react-datepicker__current-month,
-.react-datepicker__day-name,
-.react-datepicker-time__header {
-  color: #ffffff !important;
+.shad-dialog button {
+  @apply focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
 }
 
-.react-datepicker__triangle {
-  fill: #1a1d21 !important;
-  color: #1a1d21 !important;
-  stroke: #1a1d21 !important;
+.shad-error {
+  @apply text-red-400 !important;
 }
 
-.react-datepicker__time-list-item:hover {
-  background-color: #363a3d !important;
+.shad-table {
+  @apply rounded-lg overflow-hidden !important;
+}
+.shad-otp {
+  @apply w-full flex justify-between !important;
 }
 
-.react-datepicker__input-container input {
-  width: 100%;
-  outline: none;
-}
-.card-container{
-  box-shadow: rgba(132, 59, 206, 0.15) 0px 4px 24px;
-  border-color: hsl(270, 45%, 24%);
-  background-color: hsl(250, 24%, 9%);
+.shad-otp-slot {
+  @apply text-3xl justify-center flex border border-dark-500 rounded-lg size-16 gap-4 !important;
 }
 
-.react-datepicker__day--selected {
-  background-color: #24ae7c !important;
-  color: #ffffff !important;
-  border-radius: 4px;
+.shad-alert-dialog {
+  @apply space-y-5 bg-white border-dark-500 outline-none !important;
 }
 
-.react-datepicker__time-list-item--selected {
-  background-color: #24ae7c !important;
+.shad-sheet-content button {
+  @apply top-2 focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
 }
 
-.react-datepicker__time-container {
-  border-left: 1px solid #363a3d !important;
+.input-phone {
+  @apply mt-2 h-11 rounded-md px-3 text-sm border bg-white placeholder:text-dark-600 border-dark-500;
 }
 
-.react-datepicker__time-list-item {
-  display: flex !important;
-  align-items: center !important;
+.date-picker {
+  @apply overflow-hidden border-transparent w-full;
 }
 
-/* =====  REACT PHONE NUMBER INPUT OVERRIDES */
-.PhoneInputInput {
-  outline: none;
-  margin-left: 4px;
-  font-size: 14px;
-  font-weight: 500;
+.btn-primary {
+  @apply bg-teal-500 text-white border-transparent;
+  background-color: #00c8ab; 
+}
+.text-active {
+  color: #00c8ab;
+}
+.border-active {
+  border-color: #00c8ab;
+}
+.link-underline {
+  @apply relative;
 }
 
-.PhoneInputInput::placeholder {
-  color: #1a1d21;
+.link-underline::after {
+  content: "";
+  @apply absolute left-0 bottom-[-2px] w-full h-1 bg-teal-500 rounded-sm;
+  background-color: #00c8ab;
 }
-
-
+h1 {
+  @apply text-3xl font-extrabold uppercase bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent ml-1 mt-2 mb-5 transition-all duration-200;
+}
+.cl-internal-b3fm6y,
+.cl-internal-uyu30o,
+.dev-banner,
+.cl-internal-11ttlho:has(div:only-child),
 .cl-internal-180wb59:has(div:only-child) {
-  display: none !important;
+  @apply hidden !important;
+}
+.cl-internal-17ydaof,
+.cl-internal-19xp6v9 {
+  @apply shadow-md !important;
+}
+.shad-primary-btn {
+  @apply bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-600;
+}
+.cl-internal-ttumny {
+  @apply bg-indigo-600 border-indigo-600 text-white shadow-none;
 }
 
-.dev-banner {
- display: none !important;
-}
-
-.cl-internal-ttumny{
-  background-color: #6c47ff !important;
-  border-color: #6c47ff !important;
-  color: #fff !important;
-  box-shadow: none !important;
+/* Header title */
+.cl-headerTitle {
+  @apply text-3xl font-extrabold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent transition-all duration-200;
 }
