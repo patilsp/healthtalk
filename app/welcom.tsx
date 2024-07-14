@@ -73,7 +73,7 @@ export const Welcome = () => {
     {/* Right Side */}
     <div className="block md:w-1/2 relative">
       <motion.img
-        src="/assets/images/appointment.jpg"
+        src="/assets/images/image-2.svg"
         alt="Welcome Image"
         className="object-cover size-full"
         initial={{ opacity: 0 }}
@@ -81,6 +81,8 @@ export const Welcome = () => {
         transition={{ duration: 0.5 }}
       />
     </div>    
+
+
   </section>
   );
 };

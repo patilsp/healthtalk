@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-primary space-y-16">
-      <div className="card">
+      <div className="container">
         <section className="text-center py-12 px-4">
         <motion.h1
             initial={{ opacity: 0, y: -50 }}
@@ -14,7 +14,8 @@ const About = () => {
             className="text-4xl md:text-6xl font-bold text-green-500 mb-8"
           >
             About Us
-          </motion.h1>          <motion.p
+          </motion.h1>          
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -44,7 +45,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="bg-green-500 text-white py-12 px-4">
+        <section className="bg-green-500 text-white py-12 px-4 rounded shadow">
           <h2 className="text-2xl font-bold text-center">Our Vision</h2>
           <motion.p
             initial={{ opacity: 0 }}

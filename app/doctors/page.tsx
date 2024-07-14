@@ -7,14 +7,9 @@ const Doctors = () => {
     <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-white space-y-16">
       <div className="flex flex-col justify-center max-w-6xl min-h-screen px-4 py-10 mx-auto sm:px-6">
         <div className="flex flex-wrap items-center justify-between mb-8">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mr-10 text-4xl font-bold leading-none md:text-5xl"
-          >
+          <h1 className="mr-10 text-4xl font-bold leading-none md:text-5xl">
             Our Doctors
-          </motion.h1>
+          </h1>
           <a
             href="#"
             className="block pb-1 mt-2 text-base font-black text-blue-600 uppercase border-b border-transparent hover:border-blue-600 items-center"
@@ -64,8 +59,8 @@ const Doctors = () => {
           ].map((doctor, index) => (
             <div key={index} className="flex flex-col border border-gray-400 rounded-md shadow">
               <motion.img
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 src={doctor.image}
                 alt={doctor.name}
@@ -77,13 +72,13 @@ const Doctors = () => {
                   <div>
                     <a
                       href="#"
-                      className="inline-block mb-4 text-xs font-bold capitalize border-b-2 border-blue-600 hover:text-blue-600"
+                      className="inline-block mb-4 text-xs font-bold capitalize border-b-2 border-blue-600 hover:text-blue-500"
                     >
                       {doctor.specialty}
                     </a>
                     <a
                       href="#"
-                      className="block mb-4 text-2xl text-green-500 font-black leading-tight hover:underline hover:text-blue-600"
+                      className="block mb-4 text-2xl text-green-500 font-black leading-tight hover:underline hover:text-green-600"
                     >
                       {doctor.name}
                     </a>

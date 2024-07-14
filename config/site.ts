@@ -1,29 +1,26 @@
+// eslint-disable-next-line no-use-before-define
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Excellent Service",
+  name: "Health Talk",
   description:
-    "Clean, Clear, Confident: Transforming Lives One Drop at a Time",
+    "Health Talk: Your trusted companion for seamless doctor appointment bookings. Access top healthcare professionals, book appointments with ease, and manage your health efficiently from the comfort of your home.",
   mainNav: [
     {
       title: "Home",
       href: "/",
     },
     {
-      title: "Dashboard",
-      href: "/dashboard",
+      title: "Doctors",
+      href: "/doctors",
     },
     {
-      title: "Customers",
-      href: "/customers",
+      title: "About US",
+      href: "/about-us",
     },
     {
-      title: "Products",
-      href: "/products",
-    },
-    {
-      title: "Tasks",
-      href: "/tasks",
+      title: "WHy Choose Us",
+      href: "/why-choose-us",
     },
      {
       title: "Settings",
