@@ -130,9 +130,9 @@ export const AppointmentForm = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-4">
         {type === "create" && (
-          <section className="mb-6 space-y-1 pt-10">
+          <section className="mb-6 space-y-1">
             <h1>New Appointment</h1>
             <p className="text-dark-400">
               Request a new appointment in 10 seconds.

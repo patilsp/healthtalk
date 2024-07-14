@@ -160,7 +160,7 @@ h1 {
 
 /* Header title */
 .cl-headerTitle {
-  @apply text-2xl font-extrabold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent transition-all duration-200;
+  @apply text-xl font-extrabold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent transition-all duration-200;
 }
 
 .cl-internal-ttumny[data-variant="solid"][data-color="primary"] {
@@ -176,4 +176,26 @@ h1 {
 .z-1000{
   z-index: 1000 !important;
   
+}
+
+.data-\[disabled\]\:pointer-events-none[data-disabled] {
+  pointer-events: visible !important;
+}
+
+.cl-internal-qk5yrq {
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+}
+
+.shad-primary-btn {
+  background-image: linear-gradient(76.35deg, #6c47ff 15.89%, #6c47ff 89.75%);
+  border-color: hsl(270, 60%, 52%);
+  color: #fff;
+  font-weight: 600
+}
+.shad-primary-btn:hover{
+  border-color: #fff;
+}
+.shad-danger-btn {
+  @apply bg-red-700 text-white !important;
 }

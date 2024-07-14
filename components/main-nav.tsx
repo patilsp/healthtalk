@@ -21,7 +21,7 @@ export function MainNav() {
           className="h-8 w-fit"
         />
       </Link>
-      <nav className="flex items-center space-x-6 text-l font-bold">
+      <nav className="flex items-center space-x-6 text-xs font-bold">
         <Link
           href="/"
           className={cn(

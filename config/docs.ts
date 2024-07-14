@@ -13,20 +13,20 @@ export const docsConfig: DocsConfig = {
       href: "/",
     },
     {
-      title: "Dashboard",
-      href: "/dashboard",
+      title: "Doctors",
+      href: "/doctors",
     },
     {
-      title: "Customers",
-      href: "/customers",
+      title: "About US",
+      href: "/about-us",
     },
     {
-      title: "Products",
-      href: "/products",
+      title: "WHy Choose Us",
+      href: "/why-choose-us",
     },
-    {
-      title: "Tasks",
-      href: "/tasks",
+     {
+      title: "Settings",
+      href: "/forms",
     },
     
   ],

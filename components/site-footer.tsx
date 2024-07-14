@@ -1,6 +1,6 @@
 export function SiteFooter() {
   return (
-    <footer className="bottom-0 w-full">
+    <footer className="mt-10 bottom-0 w-full">
        <section className="bg-white py-4  shadow-md">
         <div className="max-w-screen-xl px-4 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav className="flex flex-wrap justify-center -mx-5 -my-2">

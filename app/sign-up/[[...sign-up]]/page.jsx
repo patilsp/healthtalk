@@ -1,11 +1,30 @@
-"use client";
 
-import { SignUp } from "@clerk/nextjs";
+"use client"
+import { SignUp } from '@clerk/nextjs'
+import Lottie from"lottie-react";
+import React from 'react'
 
-const SignUpPage = () => (
-  <div className="mt-4 flex min-h-screen justify-center">
-    <SignUp />
-  </div>
-);
+import animationData from "@/assets/animation1.json";
 
-export default SignUpPage;
+const SignUpPage = () => {
+  return (
+    <div className="flex justify-between"> 
+        <div className='flex w-full justify-center'>
+          <div className="p-4 text-card-foreground">
+            <div className="mt-4 flex justify-between"> 
+              <div className="hidden md:block"> 
+                <Lottie animationData={animationData} /> 
+              </div>
+              <div className="mt-10">  
+                <SignUp /> 
+              </div>             
+            </div>            
+          </div>
+        </div>
+      
+    </div>
+  )
+}
+
+export default SignUpPage
+

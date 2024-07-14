@@ -57,7 +57,7 @@ const Doctors = () => {
               description: "Focused on cancer treatment and patient care.",
             },
           ].map((doctor, index) => (
-            <div key={index} className="flex flex-col border border-gray-400 rounded-md shadow">
+            <div key={index} className="flex flex-col border border-gray-400 rounded-md shadow overflow-hidden">
               <motion.img
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
