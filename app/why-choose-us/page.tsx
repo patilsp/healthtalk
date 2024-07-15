@@ -4,16 +4,13 @@ import { motion } from "framer-motion";
 
 const WhyChooseUs = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-white">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6">
       <h2 className="text-center">Health Talk Consulting </h2>
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+      <h1
         className="text-2xl md:text-3xl font-bold text-green-500 mb-2"
       >
         Why Choose Health Talk
-      </motion.h1>
+      </h1>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}

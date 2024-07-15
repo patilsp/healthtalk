@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 const Doctors = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-white space-y-16">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 space-y-16">
       <div className="flex flex-col justify-center max-w-6xl min-h-screen px-4 py-10 mx-auto sm:px-6">
         <div className="flex items-baseline justify-between mb-8">
-          <h1 className="mr-10 text-xl font-bold leading-none md:text-5xl">
+          <h1 className="mr-10 text-sm font-bold leading-none md:text-2xl">
             Our Doctors
           </h1>
           <a
@@ -68,7 +68,7 @@ const Doctors = () => {
               />
               <div className="flex grow">
                 <div className="triangle"></div>
-                <div className="flex flex-col justify-between px-4 py-6 bg-white">
+                <div className="flex flex-col justify-between px-4 py-6 ">
                   <div>
                     <a
                       href="#"
@@ -78,11 +78,11 @@ const Doctors = () => {
                     </a>
                     <a
                       href="#"
-                      className="block mb-4 text-green-500 font-black leading-tight hover:underline hover:text-green-600"
+                      className="block mb-4 text-green-500 leading-tight hover:underline hover:text-green-600"
                     >
                       {doctor.name}
                     </a>
-                    <p className="mb-4">
+                    <p className="mb-4 text-sm font-black">
                       {doctor.description}
                     </p>
                   </div>

@@ -15,7 +15,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
 
   return (
 
-    <section className="grid items-center gap-6 pb-8">
+    <section className="items-center gap-6 pb-8">
       {/* Passkey Modal if admin */}
       {isAdmin && <PasskeyModal />}
 

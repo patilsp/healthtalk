@@ -133,7 +133,7 @@
   background-color: #00c8ab;
 }
 h1 {
-  @apply text-3xl font-extrabold uppercase bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent ml-1 mt-2 mb-5 transition-all duration-200;
+  @apply text-3xl font-extrabold uppercase bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent ml-1 mt-2 mb-1 transition-all duration-200;
 }
   /* ==== File Upload */
 

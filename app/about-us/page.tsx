@@ -74,7 +74,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="bg-gray-100 py-12 px-4">
+        <section className=" py-12 px-4">
           <h2 className="text-2xl font-bold text-center">State-Of-The-Art Technology</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-5xl mx-auto">
             {[
@@ -106,7 +106,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-4 shadow-lg rounded-lg bg-green-100 hover:bg-green-200 transition-colors"
+                className="p-4 shadow-lg rounded-lg border transition-colors"
               >
                 <h3 className="text-xl font-bold">{item}</h3>
               </motion.div>
