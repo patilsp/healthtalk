@@ -112,7 +112,7 @@
 
 .btn-primary {
   @apply bg-teal-500 text-white border-transparent;
-  background-color: #00c8ab; 
+  background-color: #3fc1c9; 
 }
 .text-active {
   color: #00c8ab;

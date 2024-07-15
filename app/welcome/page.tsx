@@ -49,10 +49,10 @@ export const Welcome = () => {
                   Discover the best tools and services to improve your health
                   with our expert consultations.
                 </p>
-                <div className="flex flex-col sm:flex-row sm:space-x-4">
+                <div className="flex w-full items-center justify-start gap-2 py-2">
                   <a
                     href="/sign-in"
-                    className="px-7 py-2.5 mb-2 rounded-lg relative group text-white font-medium inline-block"
+                    className="px-7 py-2.5 rounded-lg relative group text-white font-medium inline-block mb-2 sm:mb-0"
                   >
                     <span className="absolute top-0 left-0 size-full rounded opacity-50 blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
                     <span className="size-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br group-active:opacity-0 rounded-lg opacity-50 from-purple-600 to-blue-500"></span>
@@ -77,11 +77,12 @@ export const Welcome = () => {
 
                   <a
                     href="#_"
-                    className="flex items-center justify-center px-6 py-3 mb-2 text-gray-500 transition duration-200 bg-gray-200 border rounded-md hover:bg-gray-300 hover:text-gray-600"
+                    className="flex items-center justify-center px-6 mb-2 py-3 text-gray-500 transition duration-200 bg-gray-200 border rounded-md hover:bg-gray-300 hover:text-gray-600"
                   >
                     Learn More
                   </a>
                 </div>
+
               </div>
             </motion.div>
             <motion.div
@@ -214,68 +215,73 @@ export const Welcome = () => {
       </div>
 
       <div className="w-full py-7 px-4  dark:text-white">
-        <div className="flex flex-col items-center justify-between gap-8">
-          {/* Left Side */}
-          <div className="block md:flex justify-between">
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Categories by Disease</h2>
-              <p className="text-gray-700 dark:text-gray-300">
-                We provide comprehensive information and services to help you
-                better understand and manage different health conditions.
-              </p>
+        <div className="container max-w-6xl px-8 mx-auto xl:px-5">
+          <div className="flex flex-col items-center justify-between gap-8">
+            {/* Left Side */}
+            <div className="w-full block md:flex justify-between">
+              <div>
+                <h2 className="text-2xl font-bold mb-4">
+                  Categories by Disease
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300">
+                  We provide comprehensive information and services to help you{" "}
+                  <br />
+                  better understand and manage different health conditions.
+                </p>
+              </div>
+
+              <a
+                href="/sign-in"
+                className="flex items-center justify-center w-60 h-9 px-1 mb-3 text-sm text-white transition duration-200 bg-gradient-to-r from-indigo-500 to-purple-500 rounded hover:bg-indigo-700 sm:mb-0"
+              >
+                See All Specialist
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
 
-            <a
-              href="/sign-in"
-              className="flex items-center justify-center w-60 h-9 px-1 mb-3 text-sm text-white transition duration-200 bg-gradient-to-r from-indigo-500 to-purple-500 rounded hover:bg-indigo-700 sm:mb-0"
-            >
-              See All Specialist
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
+            {/* Right Side */}
 
-          {/* Right Side */}
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {categories.map((category, index) => (
-              <motion.div
-                key={index}
-                className="bg-white dark:bg-gray-800 shadow border rounded-md p-4 overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Image
-                  src={category.image}
-                  alt={category.title}
-                  width={80}
-                  height={80}
-                  className="w-full text-center object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-xl text-center font-semibold">
-                    {category.title}
-                  </h3>
-                </div>
-                <div className="p-0">
-                  <h4 className="text-sm text-center text-green-400">
-                    {category.doctorNo} Dcotors
-                  </h4>
-                </div>
-              </motion.div>
-            ))}
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {categories.map((category, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 shadow border rounded-md p-4 overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    width={80}
+                    height={80}
+                    className="w-full text-center object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-xl text-center font-semibold">
+                      {category.title}
+                    </h3>
+                  </div>
+                  <div className="p-0">
+                    <h4 className="text-sm text-center text-green-400">
+                      {category.doctorNo} Dcotors
+                    </h4>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -364,118 +370,121 @@ export const Welcome = () => {
         </div>
       </div>
       <div className="w-full py-7 dark:text-white">
-        <div className="flex flex-col space-y-2 text-center mt-4">
-          <h1 className="text-xl font-semibold tracking-tight">Doctors</h1>
-          <h2 className="text-3xl bold tracking-tight py-2">
-            Meet Our Expert Doctors
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            Our team of highly skilled doctors is here to provide you with the
-            best possible care and expertise in their respective fields.
-          </p>
-        </div>
-        <div className="w-full flex justify-center items-center mt-8">
-          <div className="w-full p-5 bg-opacity-40 backdrop-blur-lg">
-            <div className="w-full mx-auto rounded-md p-4 bg-opacity-40 backdrop-blur-lg">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-center px-2 mx-auto">
-                {[
-                  {
-                    href: "/doctors",
-                    imgSrc: "/assets/images/doctor1.jpg",
-                    imgAlt: "Health Consultation",
-                    badgeCount: 2,
-                    title: "Instant Help at Your Fingertips",
-                    specialization: "Cardiologist",
-                    name: "Dr. John Doe",
-                    description:
-                      "Expert in heart diseases and cardiovascular surgery.",
-                  },
-                  {
-                    href: "/doctors",
-                    imgSrc: "/assets/images/doctor2.jpg",
-                    imgAlt: "Health Consultation",
-                    badgeCount: 3,
-                    title: "Expert Neurological Care",
-                    specialization: "Neurologist",
-                    name: "Dr. Jane Smith",
-                    description:
-                      "Specialist in neurological disorders and brain surgery.",
-                  },
-                  {
-                    href: "/doctors",
-                    imgSrc: "/assets/images/doctor1.jpg",
-                    imgAlt: "Health Consultation",
-                    badgeCount: 1,
-                    title: "Comprehensive Medical Support",
-                    specialization: "General Practitioner",
-                    name: "Dr. Sarah Lee",
-                    description:
-                      "Providing general health care and preventive services.",
-                  },
-                  {
-                    href: "/doctors",
-                    imgSrc: "/assets/images/doctor2.jpg",
-                    imgAlt: "Health Consultation",
-                    badgeCount: 4,
-                    title: "Pediatric Care",
-                    specialization: "Pediatrician",
-                    name: "Dr. Michael Brown",
-                    description: "Specialist in child health and development.",
-                  },
-                ].map((article, index) => (
-                  <article
-                    key={index}
-                    className="p-6 mb-6 shadow transition duration-300 group hover:-translate-y-2 hover:shadow-2xl rounded-2xl cursor-pointer border"
-                  >
-                    <a
-                      target="_self"
-                      href={article.href}
-                      className="absolute opacity-0 inset-0"
-                    ></a>
-                    <div className="relative mb-4 rounded-2xl">
-                      <Image
-                        src={article.imgSrc}
-                        alt={article.imgAlt}
-                        width={200}
-                        height={200}
-                        className="rounded-2xl w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="size-5 text-green-400"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                          />
-                        </svg>
-                        <span className="ml-1 text-sm text-slate-400">
-                          {article.badgeCount}
-                        </span>
-                      </div>
-                    </div>
-                    <h6 className="font-medium text-green-500 text-sm leading-8">
-                      {article.specialization}
-                    </h6>
-                    <h3 className="font-medium text-xl leading-8">
+        <div className="container max-w-6xl px-8 mx-auto xl:px-5">
+          <div className="flex flex-col space-y-2 text-center mt-4">
+            <h1 className="text-xl font-semibold tracking-tight">Doctors</h1>
+            <h2 className="text-3xl bold tracking-tight py-2">
+              Meet Our Expert Doctors
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Our team of highly skilled doctors is here to provide you with the
+              best possible care and expertise in their respective fields.
+            </p>
+          </div>
+          <div className="w-full flex justify-center items-center mt-8">
+            <div className="w-full p-5 bg-opacity-40 backdrop-blur-lg">
+              <div className="w-full mx-auto rounded-md p-4 bg-opacity-40 backdrop-blur-lg">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-center px-2 mx-auto">
+                  {[
+                    {
+                      href: "/doctors",
+                      imgSrc: "/assets/images/doctor1.jpg",
+                      imgAlt: "Health Consultation",
+                      badgeCount: 2,
+                      title: "Instant Help at Your Fingertips",
+                      specialization: "Cardiologist",
+                      name: "Dr. John Doe",
+                      description:
+                        "Expert in heart diseases and cardiovascular surgery.",
+                    },
+                    {
+                      href: "/doctors",
+                      imgSrc: "/assets/images/doctor2.jpg",
+                      imgAlt: "Health Consultation",
+                      badgeCount: 3,
+                      title: "Expert Neurological Care",
+                      specialization: "Neurologist",
+                      name: "Dr. Jane Smith",
+                      description:
+                        "Specialist in neurological disorders and brain surgery.",
+                    },
+                    {
+                      href: "/doctors",
+                      imgSrc: "/assets/images/doctor1.jpg",
+                      imgAlt: "Health Consultation",
+                      badgeCount: 1,
+                      title: "Comprehensive Medical Support",
+                      specialization: "General Practitioner",
+                      name: "Dr. Sarah Lee",
+                      description:
+                        "Providing general health care and preventive services.",
+                    },
+                    {
+                      href: "/doctors",
+                      imgSrc: "/assets/images/doctor2.jpg",
+                      imgAlt: "Health Consultation",
+                      badgeCount: 4,
+                      title: "Pediatric Care",
+                      specialization: "Pediatrician",
+                      name: "Dr. Michael Brown",
+                      description:
+                        "Specialist in child health and development.",
+                    },
+                  ].map((article, index) => (
+                    <article
+                      key={index}
+                      className="p-6 mb-6 shadow transition duration-300 group hover:-translate-y-2 hover:shadow-2xl rounded-2xl cursor-pointer border"
+                    >
                       <a
+                        target="_self"
                         href={article.href}
-                        className="block relative group-hover:text-green-500 transition-colors duration-200"
-                      >
-                        {article.name}
-                      </a>
-                    </h3>
-                    <p className="font-medium text-gray-500 text-sm leading-8">
-                      {article.description}
-                    </p>
-                  </article>
-                ))}
+                        className="absolute opacity-0 inset-0"
+                      ></a>
+                      <div className="relative mb-4 rounded-2xl">
+                        <Image
+                          src={article.imgSrc}
+                          alt={article.imgAlt}
+                          width={200}
+                          height={200}
+                          className="rounded-2xl w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="size-5 text-red-500"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                            />
+                          </svg>
+                          <span className="ml-1 text-sm text-slate-400">
+                            {article.badgeCount}
+                          </span>
+                        </div>
+                      </div>
+                      <h6 className="font-medium text-green-500 text-sm leading-8">
+                        {article.specialization}
+                      </h6>
+                      <h3 className="font-medium text-xl leading-8">
+                        <a
+                          href={article.href}
+                          className="block relative group-hover:text-green-500 transition-colors duration-200"
+                        >
+                          {article.name}
+                        </a>
+                      </h3>
+                      <p className="font-medium text-gray-500 text-sm leading-8">
+                        {article.description}
+                      </p>
+                    </article>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

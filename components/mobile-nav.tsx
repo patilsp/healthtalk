@@ -1,9 +1,11 @@
 "use client"
 
-import { ViewVerticalIcon } from "@radix-ui/react-icons"
+// import { ViewVerticalIcon } from "@radix-ui/react-icons"
+import Image from "next/image"
 import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
 import * as React from "react"
+
 
 import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
@@ -18,12 +20,17 @@ export function MobileNav() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button
+      <Button
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-          <ViewVerticalIcon className="size-5" />
-          <span className="sr-only">Toggle Menu</span>
+          <Image          
+            src='/assets/icons/menu.svg'
+            width={40}
+            height={40}
+            alt='menu'
+            className='object-contain' 
+          />
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="pr-0">

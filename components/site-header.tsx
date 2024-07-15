@@ -14,7 +14,7 @@ export function SiteHeader() {
 
   return (
     <header className="supports-backdrop-blur:bg-background/60 bg-background/95 sticky top-0 z-50 w-full shadow backdrop-blur">
-      <div className="container flex h-14 items-center">
+      <div className="px-2 flex h-14 items-center">
 
         <MainNav />
         <MobileNav />
@@ -35,7 +35,7 @@ export function SiteHeader() {
                     
           </nav>
           
-          <Link href="/?admin=true" className="relative  ml-2 p-[3px]">
+          <Link href="/?admin=true" className="hidden md:block relative  ml-2 p-[3px]">
             <div className="relative rounded bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-1 text-white transition duration-200 hover:bg-transparent">
               Admin
             </div>
