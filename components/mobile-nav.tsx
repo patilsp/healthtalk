@@ -5,7 +5,6 @@ import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
 import * as React from "react"
 
-import { Icons } from "@/components/icons"
 import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -33,8 +32,7 @@ export function MobileNav() {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <Icons.logo className="mr-2 size-4" />
-          <span className="font-bold">{siteConfig.name}</span>
+          <h1 className="font-bold">{siteConfig.name}</h1>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
           <div className="flex flex-col space-y-3">

@@ -125,7 +125,7 @@ export const PatientForm = () => {
           </div>
         ) : (
           <div className="flex justify-center items-center">
-            <div className="flex flex-col items-center justify-center size-full border border-gray-200 rounded-lg shadow-lg p-6 bg-white">
+            <div className="flex flex-col items-center justify-center size-full border border-gray-200 rounded-lg shadow-lg p-6">
               <div className="mb-6">
                 <Lottie animationData={animationData} loop={false} />
               </div>

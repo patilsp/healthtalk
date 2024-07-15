@@ -3,22 +3,24 @@
 import { motion } from "framer-motion";
 
 const About = () => {
+  
+  const FADE_DOWN_ANIMATION_VARIANTS = {
+    hidden: { opacity: 0, y: -10 },
+    show: { opacity: 1, y: 0, transition: { type: "spring" } },
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-primary space-y-16">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 space-y-16">
       <div className="container">
         <section className="text-center py-12 px-4">
-        <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-6xl font-bold text-green-500 mb-8"
-          >
-            About Us
-          </motion.h1>          
+          <motion.h1
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+          className="text-4xl font-bold tracking-tight sm:text-6xl"
+        >
+          About Us
+        </motion.h1>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
             className="mt-4 text-gray-700 max-w-2xl mx-auto"
           >
             Our mission is to provide exceptional healthcare services with a focus on availability, reliability, and support.
@@ -48,9 +50,7 @@ const About = () => {
         <section className="bg-green-500 text-white py-12 px-4 rounded shadow">
           <h2 className="text-2xl font-bold text-center">Our Vision</h2>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
             className="mt-4 text-center max-w-2xl mx-auto"
           >
             Healthcare anytime, anywhere. We aim to revolutionize the healthcare industry by making quality healthcare accessible to everyone.

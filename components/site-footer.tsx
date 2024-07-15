@@ -1,36 +1,32 @@
 export function SiteFooter() {
   return (
     <footer className="mt-10 bottom-0 w-full">
-       <section className="bg-white py-4  shadow-md">
+       <section className="bg-background py-4  shadow-md">
         <div className="max-w-screen-xl px-4 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
             <nav className="flex flex-wrap justify-center -mx-5 -my-2">
                 <div className="px-5 py-2">
-                    <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="/" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                         Home
                     </a>
                 </div>
                 <div className="px-5 py-2">
-                    <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                        About
+                    <a href="/about-us" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        About Us
                     </a>
                 </div>
                 <div className="px-5 py-2">
-                    <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="/doctors" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                         Doctors
                     </a>
                 </div>
+               
                 <div className="px-5 py-2">
-                    <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                        Pricing
+                    <a href="/contact-us" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        Contact Us
                     </a>
                 </div>
                 <div className="px-5 py-2">
-                    <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
-                        Contact
-                    </a>
-                </div>
-                <div className="px-5 py-2">
-                    <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                    <a href="/terms" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                         Terms
                     </a>
                 </div>

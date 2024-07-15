@@ -170,8 +170,10 @@ export const AppointmentForm = ({
               control={form.control}
               name="schedule"
               label="Expected appointment date"
+              className="p-1 bg-background"
               showTimeSelect
               dateFormat="MM/dd/yyyy  -  h:mm aa"
+              
             />
 
             <div
@@ -184,6 +186,7 @@ export const AppointmentForm = ({
                 label="Appointment reason"
                 placeholder="Annual monthly check-up"
                 disabled={type === "schedule"}
+                
               />
 
               <CustomFormField

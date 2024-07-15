@@ -2,6 +2,7 @@
 
 import { useUser } from '@clerk/nextjs';
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
@@ -29,7 +30,7 @@ export const Welcome = () => {
                 className="w-full md:w-1/2 md:px-3"
             >
                 <div className="space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0">
-                <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
+                <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
                     <span className="block xl:inline">Expert Health Consultations</span>
                     <br />
                     <span className="block text-green-500 xl:inline">For Better Well being.</span>
@@ -46,8 +47,9 @@ export const Welcome = () => {
                     </svg>
                     </a> */}
 
-                    <a href="/sign-in" class="px-7 py-2.5 rounded-lg relative group text-white font-medium inline-block"><span class="absolute top-0 left-0 size-full rounded opacity-50 blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span><span class="size-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br group-active:opacity-0 rounded-lg opacity-50 from-purple-600 to-blue-500"></span><span class="absolute inset-0 size-full transition-all duration-200 ease-out rounded-lg shadow-xl bg-gradient-to-br group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span><span class="absolute inset-0 size-full transition duration-200 ease-out rounded-lg bg-gradient-to-br to-purple-600 from-blue-500"></span><span class="relative text-lg">Get Started <svg class="size-4 ml-1 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></span></a>
-                    <a href="#_" className="flex items-center justify-center px-6 py-3 text-gray-500 transition duration-200 bg-gray-200 border rounded-md hover:bg-gray-300 hover:text-gray-600">
+                    <a href="/sign-in" class="px-7 py-2.5 mb-2 rounded-lg relative group text-white font-medium inline-block"><span class="absolute top-0 left-0 size-full rounded opacity-50 blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span><span class="size-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br group-active:opacity-0 rounded-lg opacity-50 from-purple-600 to-blue-500"></span><span class="absolute inset-0 size-full transition-all duration-200 ease-out rounded-lg shadow-xl bg-gradient-to-br group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span><span class="absolute inset-0 size-full transition duration-200 ease-out rounded-lg bg-gradient-to-br to-purple-600 from-blue-500"></span><span class="relative text-lg">Get Started <svg class="size-4 ml-1 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></span></a>
+                   
+                    <a href="#_" className="flex items-center justify-center px-6 py-3 mb-2 text-gray-500 transition duration-200 bg-gray-200 border rounded-md hover:bg-gray-300 hover:text-gray-600">
                     Learn More
                     </a>
 
@@ -61,7 +63,7 @@ export const Welcome = () => {
                 transition={{ duration: 0.7 }}
                 className="w-full mt-10 md:w-1/2 md:mt-0"
             >
-                <img
+                <Image
                 src="/assets/images/image-1.svg"
                 alt="Health Consultation"
                 className="object-cover w-full transition-transform duration-500 hover:scale-110"
@@ -71,7 +73,8 @@ export const Welcome = () => {
         </div>
         </div>
 
-      <div className="w-full bg-gradient-to-r from-green-50 to-white py-7 md:pt-20 md:pb-24">
+      <div className="w-full py-7 md:pt-20 md:pb-24 dark:text-white">
+
         <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -95,7 +98,7 @@ export const Welcome = () => {
             transition={{ duration: 0.7 }}
             className="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none"
           >
-            <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+            <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 dark:text-white lg:text-3xl md:text-2xl">
               Enhance Your Health
             </h2>
             <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
@@ -121,7 +124,7 @@ export const Welcome = () => {
           </motion.div>
         </div>
       </div>
-      <div className="w-full bg-gradient-to-l from-purple-50 to-white py-7 md:pt-20 md:pb-24">
+      <div className="w-full py-7 md:pt-20 md:pb-24">
   <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
    
     <motion.div
@@ -130,7 +133,7 @@ export const Welcome = () => {
       transition={{ duration: 0.7 }}
       className="box-border order-first w-full text-black border-solid md:w-1/2 md:pr-10 md:order-none"
     >
-      <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
+      <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 dark:text-white lg:text-3xl md:text-2xl">
         Advanced Health Solutions
       </h2>
       <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">

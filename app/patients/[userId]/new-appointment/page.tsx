@@ -10,7 +10,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
     <div className="flex flex-col md:flex-row h-screen max-h-screen py-2 md:p-10">
       {/* Form Section */}
       <div className="flex flex-col md:w-1/2 items-center justify-center p-4 md:p-8">
-        <div className="w-full max-w-[550px] border shadow-lg rounded-lg p-4 bg-primary">
+        <div className="w-full max-w-[550px] border shadow-lg rounded-lg p-4">
           <AppointmentForm
             patientId={patient?.$id}
             userId={userId}

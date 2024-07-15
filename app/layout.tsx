@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.jpg",
-    shortcut: "/favicon.jpg",
-    apple: "/favicon.jpg",
+    icon: "/healthcare.png",
+    shortcut: "/healthcare.png",
+    apple: "/healthcare.png",
   },
 }
 

@@ -180,9 +180,7 @@ h1 {
 .cl-internal-19xp6v9 {
   @apply shadow-md !important;
 }
-.shad-primary-btn {
-  @apply bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-600;
-}
+
 .cl-internal-ttumny {
   @apply bg-indigo-600 border-indigo-600 text-white shadow-none;
 }
@@ -216,19 +214,10 @@ h1 {
   /* border: 1px solid #ccc !important; */
 }
 
-.shad-primary-btn {
-  background-image: linear-gradient(76.35deg, #6c47ff 15.89%, #6c47ff 89.75%);
-  border-color: hsl(270, 60%, 52%);
-  color: #fff;
-  font-weight: 600
-}
-.shad-primary-btn:hover{
-  border-color: #fff;
-}
 .shad-danger-btn {
   @apply bg-red-700 text-white !important;
 }
 
 .cl-internal-8bykxp {
-  width: 293px !important;
+  width: 275px !important;
 }

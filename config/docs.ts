@@ -46,9 +46,8 @@ export const docsConfig: DocsConfig = {
           title: "Sign Up",
           href: "/sign-up",
         },
-        // ... other sidebarNav sub-items ...
+        // 
       ],
     },
-    // ... other sidebarNav items ...
   ],
 };

@@ -6,8 +6,8 @@ const Doctors = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-white space-y-16">
       <div className="flex flex-col justify-center max-w-6xl min-h-screen px-4 py-10 mx-auto sm:px-6">
-        <div className="flex flex-wrap items-center justify-between mb-8">
-          <h1 className="mr-10 text-4xl font-bold leading-none md:text-5xl">
+        <div className="flex items-baseline justify-between mb-8">
+          <h1 className="mr-10 text-xl font-bold leading-none md:text-5xl">
             Our Doctors
           </h1>
           <a
@@ -78,7 +78,7 @@ const Doctors = () => {
                     </a>
                     <a
                       href="#"
-                      className="block mb-4 text-2xl text-green-500 font-black leading-tight hover:underline hover:text-green-600"
+                      className="block mb-4 text-green-500 font-black leading-tight hover:underline hover:text-green-600"
                     >
                       {doctor.name}
                     </a>
@@ -89,7 +89,7 @@ const Doctors = () => {
                   <div>
                     <a
                       href="#"
-                      className="inline-block pb-1 mt-2 text-base font-black text-blue-500 uppercase border-b border-transparent hover:border-blue-600 items-center"
+                      className="inline-block pb-1 mt-2 text-sm font-black text-blue-500 uppercase border-b border-transparent hover:border-blue-600 items-center"
                     >
                       Read More <span className="ml-2">→</span>
                     </a>
