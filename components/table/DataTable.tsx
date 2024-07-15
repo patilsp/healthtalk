@@ -96,7 +96,7 @@ export function DataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
-      <div className="table-actions">
+      <div className="table-actions text-center m-3">
         <Button
           variant="outline"
           size="sm"

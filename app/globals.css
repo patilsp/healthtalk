@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -10,7 +11,7 @@
     --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
-    --primary: 262.1 83.3% 57.8%;
+    --primary: 242 73% 58%; /* Updated to #4f46e5 */
     --primary-foreground: 210 20% 98%;
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
@@ -22,7 +23,7 @@
     --destructive-foreground: 210 20% 98%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 262.1 83.3% 57.8%;
+    --ring: 242 73% 58%; /* Updated to #4f46e5 */
     --radius: 0.5rem;
   }
 
@@ -33,7 +34,7 @@
     --card-foreground: 210 20% 98%;
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
-    --primary: 263.4 70% 50.4%;
+    --primary: 242 73% 58%; /* Updated to #4f46e5 */
     --primary-foreground: 210 20% 98%;
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
@@ -45,9 +46,15 @@
     --destructive-foreground: 210 20% 98%;
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
-    --ring: 263.4 70% 50.4%;
+    --ring: 242 73% 58%; /* Updated to #4f46e5 */
   }
 }
+
+
+  /* body {
+    font-family: sans-serif;
+  } */
+  
 .card {
   @apply rounded-lg border border-gray-200 bg-white/20 shadow-sm backdrop-blur-md;
 }
@@ -68,14 +75,6 @@
   @apply flex h-11 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300;
 }
 
-.shad-select-content {
-  @apply bg-white border-dark-500 !important;
-}
-
-.shad-dialog {
-  @apply bg-white border-dark-500 !important;
-}
-
 .shad-dialog button {
   @apply focus:ring-0 focus:ring-offset-0 focus-visible:border-none focus-visible:outline-none focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
 }
@@ -92,11 +91,11 @@
 }
 
 .shad-otp-slot {
-  @apply text-3xl justify-center flex border border-dark-500 rounded-lg size-16 gap-4 !important;
+  @apply text-3xl justify-center flex border  rounded-lg size-16 gap-4 !important;
 }
 
 .shad-alert-dialog {
-  @apply space-y-5 bg-white border-dark-500 outline-none !important;
+  @apply space-y-5 bg-white  outline-none !important;
 }
 
 .shad-sheet-content button {
@@ -104,7 +103,7 @@
 }
 
 .input-phone {
-  @apply mt-2 h-11 rounded-md px-3 text-sm border bg-white placeholder:text-dark-600 border-dark-500;
+  @apply mt-2 h-11 rounded-md px-3 text-sm border bg-white  ;
 }
 
 .date-picker {
@@ -125,6 +124,9 @@
   @apply relative;
 }
 
+.status-badge{
+  @apply flex justify-center items-center rounded-md p-1 gap-1 text-white;
+}
 .link-underline::after {
   content: "";
   @apply absolute left-0 bottom-[-2px] w-full h-1 bg-teal-500 rounded-sm;
@@ -133,12 +135,39 @@
 h1 {
   @apply text-3xl font-extrabold uppercase bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent ml-1 mt-2 mb-5 transition-all duration-200;
 }
+  /* ==== File Upload */
 
+
+  .file-upload_label {
+    @apply flex flex-col justify-center gap-2 text-center ;
+  }
+
+  /* ==== Stat Card */
+  .stat-card {
+    @apply flex flex-1 flex-col gap-6 rounded-lg border bg-cover p-6;
+  }
+
+  /* ==== Status Badge */
+  .status-badge {
+    @apply flex w-full max-w-28  items-center gap-2 rounded-md px-4 py-2;
+  }
+
+  /* Data Table */
+  .data-table {
+    @apply z-10 w-full overflow-hidden rounded-lg border;
+  }
+
+  .table-actions {
+    @apply flex w-full items-center justify-center border-t-2 space-x-2 p-4;
+  }
 
 .title-font-size{
   @apply text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-left dark:text-white;
 }
 
+.border-active {
+  border-color: #00c8ab;
+}
 
 .cl-internal-b3fm6y,
 .cl-internal-uyu30o,
@@ -183,8 +212,8 @@ h1 {
 }
 
 .cl-internal-qk5yrq {
-  box-shadow: none !important;
-  border: 1px solid #ccc !important;
+  /* box-shadow: none !important; */
+  /* border: 1px solid #ccc !important; */
 }
 
 .shad-primary-btn {
@@ -198,4 +227,8 @@ h1 {
 }
 .shad-danger-btn {
   @apply bg-red-700 text-white !important;
+}
+
+.cl-internal-8bykxp {
+  width: 293px !important;
 }

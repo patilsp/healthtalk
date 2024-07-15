@@ -6,7 +6,7 @@ import Link from "next/link"
 import { CommandMenu } from "@/components/command-menu"
 import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
-// import { ModeToggle } from "@/components/mode-toggle"
+import { ModeToggle } from "@/components/mode-toggle"
 
 
 export function SiteHeader() {
@@ -23,7 +23,7 @@ export function SiteHeader() {
             <CommandMenu />
           </div>
           <nav className="flex items-center gap-2">
-              {/* <ModeToggle /> */}
+              <ModeToggle />
 
               {userId == null ? (
                   <Link href='sign-in' className='btn-primary bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-8 items-center justify-center rounded px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50'>

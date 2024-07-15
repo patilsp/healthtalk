@@ -38,16 +38,20 @@ export const Welcome = () => {
                     Discover the best tools and services to improve your health with our expert consultations.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:space-x-4">
-                    <a href="/sign-in" className="flex items-center justify-center px-8 py-3 mb-3 text-white transition duration-200 bg-gradient-to-r from-indigo-500 to-purple-500 rounded hover:bg-indigo-500 sm:mb-0">
+                    {/* <a href="/sign-in" className="flex items-center justify-center px-8 py-3 mb-3 text-white transition duration-200 bg-gradient-to-r from-indigo-500 to-purple-500 rounded hover:bg-indigo-700 sm:mb-0">
                     Get Started
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                    </a>
+                    </a> */}
+
+                    <a href="/sign-in" class="px-7 py-2.5 rounded-lg relative group text-white font-medium inline-block"><span class="absolute top-0 left-0 size-full rounded opacity-50 blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span><span class="size-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br group-active:opacity-0 rounded-lg opacity-50 from-purple-600 to-blue-500"></span><span class="absolute inset-0 size-full transition-all duration-200 ease-out rounded-lg shadow-xl bg-gradient-to-br group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span><span class="absolute inset-0 size-full transition duration-200 ease-out rounded-lg bg-gradient-to-br to-purple-600 from-blue-500"></span><span class="relative text-lg">Get Started <svg class="size-4 ml-1 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></span></a>
                     <a href="#_" className="flex items-center justify-center px-6 py-3 text-gray-500 transition duration-200 bg-gray-200 border rounded-md hover:bg-gray-300 hover:text-gray-600">
                     Learn More
                     </a>
+
+                    
                 </div>
                 </div>
             </motion.div>
