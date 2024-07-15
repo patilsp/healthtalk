@@ -22,7 +22,7 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
       {/* Image Section */}
       <div className="hidden md:block md:w-1/2 relative">
         <Image
-          src="/assets/images/img-2.jpg"
+          src="/assets/images/appointment.jpg"
           height={1500}
           width={1500}
           alt="appointment"

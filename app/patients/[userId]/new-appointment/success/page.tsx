@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
 import { Doctors } from "@/constants";
 import { getAppointment } from "@/lib/actions/appointment.actions";
 import { formatDateTime } from "@/lib/utils";
+import { Button } from "@/registry/new-york/ui/button";
 
 const RequestSuccess = async ({
   searchParams,
@@ -18,8 +18,8 @@ const RequestSuccess = async ({
   );
 
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center px-4 md:px-[10%] mt-4">
-      <div className="flex flex-col items-center">
+    <div className="mx-auto flex flex-col items-center justify-center px-4 md:px-[10%] mt-4">
+      <div className="flex flex-col items-center p-2 border shadow rounded-md">
         <Image
           src="/assets/gifs/success.gif"
           height={300}
@@ -32,36 +32,37 @@ const RequestSuccess = async ({
           been successfully submitted!
         </h2>
         <p className="text-indigo-500 font-semibold mb-4">We&apos;ll be in touch shortly to confirm.</p>
-      </div>
+      
 
-      <div className="w-full md:w-2/3 lg:w-1/2 bg-gray-50 p-6 rounded-lg shadow-lg">
-        <p className="text-gray-700 font-semibold mb-4">Requested appointment details:</p>
-        <div className="flex items-center gap-3 mb-4">
-          <Image
-            src={doctor?.image!}
-            alt="doctor"
-            width={100}
-            height={100}
-            className="rounded-full"
-          />
-          <p className="whitespace-nowrap text-gray-700 font-bold">
-            Dr. {doctor?.name}
-          </p>
-          <Image
-            src="/assets/icons/calendar.svg"
-            height={24}
-            width={24}
-            alt="calendar"
-            className="text-gray-700"
-          />
-          <p className="text-gray-700">
-            {formatDateTime(appointment.schedule).dateTime}
-          </p>
+        <div className="w-full p-8">
+          <p className="text-gray-700 font-semibold mb-4">Requested appointment details:</p>
+          <div className="flex items-center gap-3 mb-4">
+            <Image
+              src={doctor?.image!}
+              alt="doctor"
+              width={100}
+              height={100}
+              className="rounded-full"
+            />
+            <p className="whitespace-nowrap text-gray-700 font-bold">
+              Dr. {doctor?.name}
+            </p>
+            <Image
+              src="/assets/icons/calendar.svg"
+              height={24}
+              width={24}
+              alt="calendar"
+              className="text-gray-700"
+            />
+            <p className="text-gray-700">
+              {formatDateTime(appointment.schedule).dateTime}
+            </p>
+          </div>
+          
+          <Button variant="outline" className="bg-indigo-600 text-white hover:text-white hover:bg-indigo-500 w-full">
+            <Link href={`/patients/${userId}/new-appointment`}>New Appointment</Link>
+          </Button>
         </div>
-        
-        <Button variant="outline" className="btn-primary w-full">
-          <Link href={`/patients/${userId}/new-appointment`}>New Appointment</Link>
-        </Button>
       </div>
     </div>
   );

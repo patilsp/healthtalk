@@ -12,11 +12,13 @@ import { z } from "zod";
 import animationData from "@/assets/animation1.json";
 import { Form } from "@/components/ui/form";
 import { createUser } from "@/lib/actions/patient.actions";
+// eslint-disable-next-line import/order
 import { UserFormValidation } from "@/lib/validation";
 
 import "react-phone-number-input/style.css";
+import { Button } from "@/registry/new-york/ui/button";
+
 import CustomFormField, { FormFieldType } from "../CustomFormField";
-import SubmitButton from "../SubmitButton";
 
 export const PatientForm = () => {
   const { user } = useUser();
@@ -67,7 +69,7 @@ export const PatientForm = () => {
   }
 
   return (
-    <section className="w-full min-h-screen flex flex-col lg:flex-row">
+    <section className="container min-h-screen flex flex-col lg:flex-row">
       {!showAnimation && (
         <div className="lg:w-1/2 hidden lg:flex items-center justify-center">
           <Image
@@ -79,14 +81,14 @@ export const PatientForm = () => {
           />
         </div>
       )}
-      <div className="lg:w-1/2 flex items-center justify-center p-6 lg:p-8">
+      <div className="lg:w-1/2 flex items-center justify-center p-2 lg:p-8">
         {!showAnimation ? (
           <div className="max-w-md w-full border p-8 rounded-lg shadow-lg">
             <Form {...form} className="w-full">
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                 <section className="text-center lg:text-left mb-8">
                   <h1 className="text-2xl lg:text-3xl font-semibold">
-                    Hi there 👋
+                    Hi there  <span>👋 </span>
                   </h1>
                   <p className="text-gray-500">
                     Get started with appointments.
@@ -119,13 +121,13 @@ export const PatientForm = () => {
                   placeholder="(555) 123-4567"
                 />
 
-                <SubmitButton className="bg-indigo-500 hover:bg-indigo-800 my-2 w-full" isLoading={isLoading}>Get Started</SubmitButton>
+                <Button className="bg-indigo-500 hover:bg-indigo-800 my-2 w-full" isLoading={isLoading}>Get Started</Button>
               </form>
             </Form>
           </div>
         ) : (
-          <div className="flex justify-center items-center">
-            <div className="flex flex-col items-center justify-center size-full border border-gray-200 rounded-lg shadow-lg p-6">
+          <div className="max-w-md w-full flex justify-center items-center">
+            <div className="flex flex-col items-center justify-center w-full border border-gray-200 rounded-lg shadow-lg p-6">
               <div className="mb-6">
                 <Lottie animationData={animationData} loop={false} />
               </div>

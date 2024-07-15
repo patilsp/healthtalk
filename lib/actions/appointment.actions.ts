@@ -50,7 +50,7 @@ export const getRecentAppointmentList = async () => {
     const counts = (appointments.documents as Appointment[]).reduce(
       (acc, appointment) => {
         switch (appointment.status) {
-          case "scheduled":
+          case "schedule":
             acc.scheduledCount++;
             break;
           case "pending":
@@ -103,24 +103,48 @@ export const updateAppointment = async ({
   type,
 }: UpdateAppointmentParams) => {
   try {
+    let status;
+    switch (type) {
+      case "schedule":
+        status = "schedule";
+        break;
+      case "cancel":
+        status = "cancelled";
+        break;
+      default:
+        status = "pending";
+    }
+
+    const updatedAppointmentData = {
+      ...appointment,
+      status,
+    };
     const updatedAppointment = await databases.updateDocument(
       DATABASE_ID!,
       APPOINTMENT_COLLECTION_ID!,
       appointmentId,
-      appointment
+      updatedAppointmentData
     );
 
-    if (!updatedAppointment) throw Error;
+    if (!updatedAppointment) {
+      throw new Error('Failed to update the appointment');
+    }
 
-    const smsMessage = `Greetings from health talk. ${type === "schedule" ? `Your appointment is confirmed for ${formatDateTime(appointment.schedule!).dateTime} with Dr. ${appointment.primaryPhysician}` : `We regret to inform that your appointment for ${formatDateTime(appointment.schedule!).dateTime} is cancelled. Reason:  ${appointment.cancellationReason}`}.`;
+    const smsMessage = `Greetings from health talk. ${
+      type === 'schedule'
+        ? `Your appointment is confirmed for ${formatDateTime(appointment.schedule!).dateTime} with Dr. ${appointment.primaryPhysician}`
+        : `We regret to inform that your appointment for ${formatDateTime(appointment.schedule!).dateTime} is cancelled. Reason: ${appointment.cancellationReason}`
+    }.`;
+
     await sendSMSNotification(userId, smsMessage);
 
-    revalidatePath("/dashboard");
+    revalidatePath('/dashboard');
     return parseStringify(updatedAppointment);
   } catch (error) {
-    console.error("An error occurred while scheduling an appointment:", error);
+    throw new Error('Failed to update appointment. Please try again.');
   }
 };
+
 
 // GET APPOINTMENT
 export const getAppointment = async (appointmentId: string) => {

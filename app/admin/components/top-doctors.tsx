@@ -9,7 +9,7 @@ import {
       <div className="space-y-8">
         <div className="flex items-center">
           <Avatar className="size-9">
-            <AvatarImage src="/avatars/doctor1.png" alt="Dr. Smith Avatar" />
+            <AvatarImage src="/assets/avatars/doctor1.png" alt="Dr. Smith Avatar" />
             <AvatarFallback>DS</AvatarFallback>
           </Avatar>
           <div className="ml-4 space-y-1">
@@ -20,7 +20,7 @@ import {
         </div>
         <div className="flex items-center">
           <Avatar className="size-9">
-            <AvatarImage src="/avatars/doctor2.png" alt="Dr. Kim Avatar" />
+            <AvatarImage src="/assets/avatars/doctor2.png" alt="Dr. Kim Avatar" />
             <AvatarFallback>DK</AvatarFallback>
           </Avatar>
           <div className="ml-4 space-y-1">
@@ -31,7 +31,7 @@ import {
         </div>
         <div className="flex items-center">
           <Avatar className="size-9">
-            <AvatarImage src="/avatars/doctor3.png" alt="Dr. Lee Avatar" />
+            <AvatarImage src="/assets/avatars/doctor3.png" alt="Dr. Lee Avatar" />
             <AvatarFallback>DL</AvatarFallback>
           </Avatar>
           <div className="ml-4 space-y-1">
@@ -42,7 +42,7 @@ import {
         </div>
         <div className="flex items-center">
           <Avatar className="size-9">
-            <AvatarImage src="/avatars/doctor4.png" alt="Dr. Nguyen Avatar" />
+            <AvatarImage src="/assets/avatars/doctor4.png" alt="Dr. Nguyen Avatar" />
             <AvatarFallback>DN</AvatarFallback>
           </Avatar>
           <div className="ml-4 space-y-1">
@@ -53,7 +53,7 @@ import {
         </div>
         <div className="flex items-center">
           <Avatar className="size-9">
-            <AvatarImage src="/avatars/doctor5.png" alt="Dr. Patel Avatar" />
+            <AvatarImage src="/assets/avatars/doctor1.png" alt="Dr. Patel Avatar" />
             <AvatarFallback>DP</AvatarFallback>
           </Avatar>
           <div className="ml-4 space-y-1">

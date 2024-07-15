@@ -1,14 +1,15 @@
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
-import { Metadata } from "next"
+import { Metadata } from "next";
+import { Toaster } from 'react-hot-toast';
 
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
-import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/config/site";
+import { fontSans } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <div className="flex-1">{children}</div>
               <SiteFooter />
             </div>
+            <Toaster />
             <TailwindIndicator />
           </ThemeProvider>
         </body>

@@ -5,14 +5,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { z } from "zod";
 
 import { SelectItem } from "@/components/ui/select";
 import { Doctors } from "@/constants";
-import {
-  createAppointment,
-  updateAppointment,
-} from "@/lib/actions/appointment.actions";
+import { createAppointment, updateAppointment } from "@/lib/actions/appointment.actions";
 import { getAppointmentSchema } from "@/lib/validation";
 import { Appointment } from "@/types/appwrite.types";
 
@@ -44,27 +42,25 @@ export const AppointmentForm = ({
     resolver: zodResolver(AppointmentFormValidation),
     defaultValues: {
       primaryPhysician: appointment ? appointment?.primaryPhysician : "",
-      schedule: appointment
-        ? new Date(appointment?.schedule!)
-        : new Date(Date.now()),
+      schedule: appointment ? new Date(appointment?.schedule!) : new Date(Date.now()),
       reason: appointment ? appointment.reason : "",
       note: appointment?.note || "",
       cancellationReason: appointment?.cancellationReason || "",
     },
   });
 
-  const onSubmit = async (
-    values: z.infer<typeof AppointmentFormValidation>
-  ) => {
+  const onSubmit = async (values: z.infer<typeof AppointmentFormValidation>) => {
     setIsLoading(true);
+
+    // console.log("Form Values:", values);
 
     let status;
     switch (type) {
       case "schedule":
-        status = "scheduled";
+        status = "schedule";
         break;
       case "cancel":
-        status = "cancelled";
+        status = "cancel";
         break;
       default:
         status = "pending";
@@ -72,7 +68,7 @@ export const AppointmentForm = ({
 
     try {
       if (type === "create" && patientId) {
-        const appointment = {
+        const appointmentData = {
           userId,
           patient: patientId,
           primaryPhysician: values.primaryPhysician,
@@ -82,13 +78,15 @@ export const AppointmentForm = ({
           note: values.note,
         };
 
-        const newAppointment = await createAppointment(appointment);
+        // console.log("New Appointment Data:", appointmentData);
+
+        const newAppointment = await createAppointment(appointmentData);
+        // console.log("New Appointment Response:", newAppointment);
 
         if (newAppointment) {
           form.reset();
-          router.push(
-            `/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
-          );
+          router.push(`/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`);
+          toast.success("Appointment created successfully!");
         }
       } else {
         const appointmentToUpdate = {
@@ -103,15 +101,22 @@ export const AppointmentForm = ({
           type,
         };
 
+        // console.log("Updated Appointment Data:", appointmentToUpdate);
+
         const updatedAppointment = await updateAppointment(appointmentToUpdate);
+        // console.log("Updated Appointment Response:", updatedAppointment);
 
         if (updatedAppointment) {
           setOpen && setOpen(false);
           form.reset();
+          toast.success("Appointment updated successfully!");
+        } else {
+          toast.error("Failed to update appointment.");
         }
       }
     } catch (error) {
-      // console.log(error);
+      console.log("Error:", error);
+      toast.error("An error occurred while processing the appointment.");
     }
     setIsLoading(false);
   };
@@ -134,9 +139,7 @@ export const AppointmentForm = ({
         {type === "create" && (
           <section className="mb-6 space-y-1">
             <h1>New Appointment</h1>
-            <p className="text-dark-400">
-              Request a new appointment in 10 seconds.
-            </p>
+            <p className="text-dark-400">Request a new appointment in 10 seconds.</p>
           </section>
         )}
 
@@ -173,20 +176,16 @@ export const AppointmentForm = ({
               className="p-1 bg-background"
               showTimeSelect
               dateFormat="MM/dd/yyyy  -  h:mm aa"
-              
             />
 
-            <div
-              className={`flex flex-col gap-6  ${type === "create" && "xl:flex-row"}`}
-            >
+            <div className={`flex flex-col gap-6  ${type === "create" && "xl:flex-row"}`}>
               <CustomFormField
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="reason"
                 label="Appointment reason"
                 placeholder="Annual monthly check-up"
-                disabled={type === "schedule"}
-                
+                // disabled={type === "schedule"}
               />
 
               <CustomFormField
@@ -195,7 +194,7 @@ export const AppointmentForm = ({
                 name="note"
                 label="Comments/notes"
                 placeholder="Prefer afternoon appointments, if possible"
-                disabled={type === "schedule"}
+                // disabled={type === "schedule"}
               />
             </div>
           </>
