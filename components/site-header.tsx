@@ -37,15 +37,11 @@ export function SiteHeader() {
                     
           </nav>
           
-          {/* <Link href="/?admin=true" className="hidden md:block relative  ml-2 p-[3px]">
-            <div className="relative rounded bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-1 text-white transition duration-200 hover:bg-transparent">
+          <Link href="/?admin=true">
+            <button type="button" onClick={() => router.push('/admin')}>
               Admin
-            </div>
-          </Link> */}
-
-          <button type="button" onClick={() => router.push('/admin')}>
-            Admin
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </header>

@@ -55,7 +55,7 @@ export const PatientForm = () => {
       if (newUser) {
         setTimeout(() => {
           router.push(`/patients/${newUser.$id}/register`);
-        }, 2000); // Adjust the timeout to match the animation duration
+        }, 2000);
       }
     } catch (error) {
       // Handle error here if needed
@@ -65,7 +65,23 @@ export const PatientForm = () => {
   };
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div>
+       <div className="container w-full flex justify-center items-center">
+            <div className="flex flex-col items-center justify-center w-full border border-gray-200 rounded-lg shadow-lg p-6">
+              <div className="mb-6">
+                <Lottie animationData={animationData} loop={false} />
+              </div>
+              <div className="text-center">
+                <h2 className="text-2xl font-semibold mb-2">
+                  Preparing Your Registration
+                </h2>
+                <p className="text-gray-500">
+                  Please wait while we prepare your registration page.
+                </p>
+              </div>
+            </div>
+          </div>
+    </div>;
   }
 
   return (
@@ -126,7 +142,7 @@ export const PatientForm = () => {
             </Form>
           </div>
         ) : (
-          <div className="max-w-md w-full flex justify-center items-center">
+          <div className="container w-full flex justify-center items-center">
             <div className="flex flex-col items-center justify-center w-full border border-gray-200 rounded-lg shadow-lg p-6">
               <div className="mb-6">
                 <Lottie animationData={animationData} loop={false} />

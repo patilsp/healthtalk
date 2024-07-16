@@ -72,6 +72,16 @@ export function MainNav() {
           Why Choose Us
           {pathname === "/why-choose-us" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
         </Link>
+        <Link
+          href="/contact-us"
+          className={cn(
+            "relative transition-colors hover:text-foreground/80",
+            pathname === "/contact-us" ? "text-active" : "text-foreground/60"
+          )}
+        >
+         Contact Us
+          {pathname === "/contact-us" && <span className="border-active absolute bottom-[-5px] left-0 w-full border-b-2"></span>}
+        </Link>
         
      
 

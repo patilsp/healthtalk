@@ -14,20 +14,28 @@ export const Welcome = () => {
     { title: "Pediatrics", doctorNo: "7", image: "/assets/icons/image4.svg" },
     { title: "Dermatology", doctorNo: "3", image: "/assets/icons/image6.svg" },
   ];
+  const howitworks = [
+    { title: "Search Doctor", desc: "Keeping you healthy is our high priority.", image: "/assets/icons/image6.svg" },
+    { title: "Check Doctor Profile", desc: "Choose to best doctor's from our list.", image: "/assets/icons/image5.svg" },
+    { title: "Schedule Appointment", desc: "Schedule an appointment with variable dates.", image: "/assets/icons/image1.svg" },
+    { title: "Get Solution", desc: "Get best solution for your requirement.", image: "/assets/icons/image4.svg" },
+  ];
+
+  
 
   const router = useRouter();
   const { isSignedIn } = useUser();
 
   useEffect(() => {
     if (isSignedIn) {
-      router.push("/");
+      router.push("/appointment");
     }
   }, [isSignedIn, router]);
 
   return (
     <div className="p-0">
       <div className="w-full py-7 dark:text-white">
-        <div className="container max-w-6xl px-8 mx-auto xl:px-5">
+        <div className="container max-w-6xl px-8 mt-4 mx-auto xl:px-5">
           <div className="flex flex-wrap items-center sm:-mx-3">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -77,7 +85,7 @@ export const Welcome = () => {
 
                   <a
                     href="#_"
-                    className="flex items-center justify-center px-6 mb-2 py-3 text-gray-500 transition duration-200 bg-gray-200 border rounded-md hover:bg-gray-300 hover:text-gray-600"
+                    className="flex items-center justify-center px-6 py-3 text-gray-500 transition duration-200 bg-gray-200 border rounded-md hover:bg-gray-300 hover:text-gray-600"
                   >
                     Learn More
                   </a>
@@ -99,6 +107,61 @@ export const Welcome = () => {
                 className="object-cover w-full transition-transform duration-500 hover:scale-110"
               />
             </motion.div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full py-7 px-4  dark:text-white">
+        <div className="container max-w-6xl px-8 mx-auto xl:px-5">
+          <div className="flex flex-col items-center justify-between gap-8">
+            {/* Left Side */}
+            <div className="w-full">
+              <div className="text-center">
+                <h1 className="text-2xl font-bold mb-4">
+                 How it Works?
+                </h1>
+                <p className="text-gray-500 dark:text-gray-300">
+                  4 Steps to get your solution 
+                </p>
+              </div>
+
+             
+            </div>
+
+            {/* Right Side */}
+
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {howitworks.map((howitworks, index) => (
+                <motion.div
+                  key={index}
+                  className="w-full bg-white dark:bg-gray-800 shadow-lg border rounded-md py-4 px-2 overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                 <div className="flex justify-center items-center">
+                    <Image
+                        src={howitworks.image}
+                        alt={howitworks.title}
+                        width={40}
+                        height={40}
+                        className="object-cover"
+                    />
+                    </div>
+
+                  <div className="py-4 px-2">
+                    <h3 className="text-l text-center font-semibold">
+                      {howitworks.title}
+                    </h3>
+                  </div>
+                  <div className="p-0">
+                    <h4 className="text-sm text-center">
+                      {howitworks.desc}
+                    </h4>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -218,37 +281,17 @@ export const Welcome = () => {
         <div className="container max-w-6xl px-8 mx-auto xl:px-5">
           <div className="flex flex-col items-center justify-between gap-8">
             {/* Left Side */}
-            <div className="w-full block md:flex justify-between">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">
-                  Categories by Disease
-                </h2>
-                <p className="text-gray-700 dark:text-gray-300">
-                  We provide comprehensive information and services to help you{" "}
-                  <br />
-                  better understand and manage different health conditions.
+            <div className="w-full">
+              <div className="text-center">
+                <h1 className="text-2xl font-bold mb-4">
+                 Consult Top Doctors Online For <br /> Any Health Concern
+                </h1>
+                <p className="text-gray-500 dark:text-gray-300">
+                  Private Online consultations with verified doctors in all specialists 
                 </p>
               </div>
 
-              <a
-                href="/sign-in"
-                className="flex items-center justify-center w-60 h-9 px-1 mb-3 text-sm text-white transition duration-200 bg-gradient-to-r from-indigo-500 to-purple-500 rounded hover:bg-indigo-700 sm:mb-0"
-              >
-                See All Specialist
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
+             
             </div>
 
             {/* Right Side */}
@@ -257,20 +300,23 @@ export const Welcome = () => {
               {categories.map((category, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white dark:bg-gray-800 shadow border rounded-md p-4 overflow-hidden"
+                  className="w-full bg-white dark:bg-gray-800 shadow-lg border rounded-md py-4 px-2 overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Image
-                    src={category.image}
-                    alt={category.title}
-                    width={80}
-                    height={80}
-                    className="w-full text-center object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-xl text-center font-semibold">
+                 <div className="flex justify-center items-center">
+                    <Image
+                        src={category.image}
+                        alt={category.title}
+                        width={40}
+                        height={40}
+                        className="object-cover"
+                    />
+                    </div>
+
+                  <div className="py-4 px-2">
+                    <h3 className="text-l text-center font-semibold">
                       {category.title}
                     </h3>
                   </div>
@@ -281,6 +327,17 @@ export const Welcome = () => {
                   </div>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="w-full flex justify-center text-center mt-2">
+            <a
+                href="/sign-in"
+                className="flex items-center justify-center w-60 h-9 mb-3 text-sm text-white transition duration-200 bg-gradient-to-r from-indigo-500 to-purple-500 rounded hover:bg-indigo-700 sm:mb-0"
+              >
+                See All Specialist
+                
+              </a>
+
             </div>
           </div>
         </div>
@@ -317,7 +374,7 @@ export const Welcome = () => {
             <h2 className="mb-2 text-xl font-semibold leading-tight border-0 border-gray-300 dark:text-white lg:text-3xl md:text-2xl">
               Treat Like Live Care
             </h2>
-            <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
+            <p className="pt-4 pb-8 m-0 text-sm  text-gray-700 border-0 border-gray-300">
               At our health center, we believe in treating our patients with the
               same care and attention as we would our own family. Our doctors
               are dedicated to providing personalized care that addresses both
@@ -335,10 +392,10 @@ export const Welcome = () => {
                 />
               </div>
               <div>
-                <div className="text-xl font-medium text-black">
+                <div className="text-l font-medium text-black">
                   Consult via Voice and Video all
                 </div>
-                <p className="text-slate-500">
+                <p className="text-sm text-slate-500">
                   When you getting consultation from doctors, you can consult
                   via voice and video call for better understanding.
                 </p>
@@ -357,10 +414,10 @@ export const Welcome = () => {
                 />
               </div>
               <div>
-                <div className="text-xl font-medium text-black">
+                <div className="text-l font-medium text-black">
                   Treat as a Family Doctor
                 </div>
-                <p className="text-slate-500">
+                <p className="text-sm text-slate-500">
                   When you getting consultation from doctors, you can think its
                   your family doctor. our doctor is friendly for patients.
                 </p>
