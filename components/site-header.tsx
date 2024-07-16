@@ -2,6 +2,7 @@
 
 import { UserButton, useAuth } from "@clerk/nextjs"
 import Link from "next/link"
+import { useRouter } from 'next/navigation'
 
 import { CommandMenu } from "@/components/command-menu"
 import { MainNav } from "@/components/main-nav"
@@ -11,6 +12,7 @@ import { ModeToggle } from "@/components/mode-toggle"
 
 export function SiteHeader() {
   const { userId } = useAuth();
+  const router = useRouter();
 
   return (
     <header className="supports-backdrop-blur:bg-background/60 bg-background/95 sticky top-0 z-50 w-full shadow backdrop-blur">
@@ -35,11 +37,15 @@ export function SiteHeader() {
                     
           </nav>
           
-          <Link href="/?admin=true" className="hidden md:block relative  ml-2 p-[3px]">
+          {/* <Link href="/?admin=true" className="hidden md:block relative  ml-2 p-[3px]">
             <div className="relative rounded bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-1 text-white transition duration-200 hover:bg-transparent">
               Admin
             </div>
-          </Link>
+          </Link> */}
+
+          <button type="button" onClick={() => router.push('/admin')}>
+            Admin
+          </button>
         </div>
       </div>
     </header>

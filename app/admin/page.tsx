@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { CalendarDateRangePicker } from "@/app/admin/components/date-range-picker";
+// import { CalendarDateRangePicker } from "@/app/admin/components/date-range-picker";
 import { Overview } from "@/app/admin/components/overview";
 import { Search } from "@/app/admin/components/search";
 import TeamSwitcher from "@/app/admin/components/team-switcher";
@@ -9,7 +9,7 @@ import { StatCard } from "@/components/StatCard";
 import { columns } from "@/components/table/columns";
 import { DataTable } from "@/components/table/DataTable";
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
-import { Button } from "@/registry/new-york/ui/button";
+// import { Button } from "@/registry/new-york/ui/button";
 import {
   Card,
   CardContent,
@@ -40,11 +40,11 @@ const AdminPage = async () => {
           </div>
         </div>
           <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Admin Dashboard</h1>
-            <div className="flex items-center space-x-2">
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Dashboard</h1>
+            {/* <div className="flex items-center space-x-2">
               <CalendarDateRangePicker />
               <Button>Download</Button>
-            </div>
+            </div> */}
           </div>
 
           <Tabs defaultValue="overview" className="space-y-4">
