@@ -33,7 +33,7 @@ export const Welcome = () => {
   }, [isSignedIn, router]);
 
   return (
-    <div className="p-0">
+    <div className="p-1">
       <div className="w-full py-7 dark:text-white">
         <div className="container max-w-6xl px-8 mt-4 mx-auto xl:px-5">
           <div className="flex flex-wrap items-center sm:-mx-3">
