@@ -5,8 +5,8 @@ import Link from "next/link"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { Button } from "@/registry/new-york/ui/button"
-import { Checkbox } from "@/registry/new-york/ui/checkbox"
+import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   Form,
   FormControl,
@@ -15,9 +15,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/registry/new-york/ui/form"
-import { RadioGroup, RadioGroupItem } from "@/registry/new-york/ui/radio-group"
-import { Switch } from "@/registry/new-york/ui/switch"
+} from "@/components/ui/form"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Switch } from "@/components/ui/switch"
 
 const notificationsFormSchema = z.object({
   type: z.enum(["all", "mentions", "none"], {

@@ -112,8 +112,8 @@ export const Welcome = () => {
       </div>
 
       <div className="w-full py-7 px-4  dark:text-white">
-        <div className="container max-w-6xl px-8 mx-auto xl:px-5">
-          <div className="flex flex-col items-center justify-between gap-8">
+        <div className="container-fluid max-w-6xl px-2 md:px-8 mx-auto xl:px-5">
+          <div className="flex flex-col items-center justify-between gap-2 md:gap-8">
             {/* Left Side */}
             <div className="w-full">
               <div className="text-center">
@@ -130,7 +130,7 @@ export const Welcome = () => {
 
             {/* Right Side */}
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
               {howitworks.map((howitworks, index) => (
                 <motion.div
                   key={index}
@@ -278,7 +278,7 @@ export const Welcome = () => {
       </div>
 
       <div className="w-full py-7 px-4  dark:text-white">
-        <div className="container max-w-6xl px-8 mx-auto xl:px-5">
+        <div className="container-fluid max-w-6xl px-2 md:px-8 mx-auto xl:px-5">
           <div className="flex flex-col items-center justify-between gap-8">
             {/* Left Side */}
             <div className="w-full">
@@ -392,7 +392,7 @@ export const Welcome = () => {
                 />
               </div>
               <div>
-                <div className="text-l font-medium text-black">
+                <div className="text-l font-medium text-black dark:text-white">
                   Consult via Voice and Video all
                 </div>
                 <p className="text-sm text-slate-500">
@@ -414,7 +414,7 @@ export const Welcome = () => {
                 />
               </div>
               <div>
-                <div className="text-l font-medium text-black">
+                <div className="text-l font-medium text-black dark:text-white">
                   Treat as a Family Doctor
                 </div>
                 <p className="text-sm text-slate-500">
@@ -427,7 +427,7 @@ export const Welcome = () => {
         </div>
       </div>
       <div className="w-full py-7 dark:text-white">
-        <div className="container max-w-6xl px-8 mx-auto xl:px-5">
+        <div className="container max-w-6xl px-1 md:px-8 mx-auto xl:px-5">
           <div className="flex flex-col space-y-2 text-center mt-4">
             <h1 className="text-xl font-semibold tracking-tight">Doctors</h1>
             <h2 className="text-3xl bold tracking-tight py-2">

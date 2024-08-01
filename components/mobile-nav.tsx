@@ -1,18 +1,16 @@
 "use client"
 
-// import { ViewVerticalIcon } from "@radix-ui/react-icons"
-import Image from "next/image"
+import { ViewVerticalIcon } from "@radix-ui/react-icons"
 import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
 import * as React from "react"
 
-
+import { Button } from "@/components/ui/button"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york/ui/button"
-import { ScrollArea } from "@/registry/new-york/ui/scroll-area"
-import { Sheet, SheetContent, SheetTrigger } from "@/registry/new-york/ui/sheet"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
@@ -24,13 +22,7 @@ export function MobileNav() {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-          <Image          
-            src='/assets/icons/menu.svg'
-            width={40}
-            height={40}
-            alt='menu'
-            className='object-contain' 
-          />
+        <ViewVerticalIcon className="h-10 ml-1" />
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="pr-0">
@@ -56,6 +48,8 @@ export function MobileNav() {
                 )
             )}
           </div>
+
+          
           <div className="flex flex-col space-y-2">
             {docsConfig.sidebarNav.map((item, index) => (
               <div key={index} className="flex flex-col space-y-3 pt-6">

@@ -16,7 +16,7 @@ import { createUser } from "@/lib/actions/patient.actions";
 import { UserFormValidation } from "@/lib/validation";
 
 import "react-phone-number-input/style.css";
-import { Button } from "@/registry/new-york/ui/button";
+import { Button } from "@/components/ui/button";
 
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 

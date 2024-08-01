@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Doctors } from "@/constants";
 import { getAppointment } from "@/lib/actions/appointment.actions";
 import { formatDateTime } from "@/lib/utils";
-import { Button } from "@/registry/new-york/ui/button";
+import { Button } from "@/components/ui/button";
 
 const RequestSuccess = async ({
   searchParams,

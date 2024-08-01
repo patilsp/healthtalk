@@ -41,6 +41,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
+             <div className='main'>
+              <div className='gradient' />
+            </div>
+            
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

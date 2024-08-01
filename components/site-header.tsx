@@ -16,19 +16,19 @@ export function SiteHeader() {
 
   return (
     <header className="supports-backdrop-blur:bg-background/60 bg-background/95 sticky top-0 z-50 w-full shadow backdrop-blur">
-      <div className="px-2 flex h-14 items-center">
+      <div className="px-2 flex justify-between h-14 items-center">
 
         <MainNav />
         <MobileNav />
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
+        <div className="flex items-center space-x-2 justify-end">
+          <div className="hidden md:flex w-full flex-1 md:w-auto md:flex-none">
             <CommandMenu />
           </div>
           <nav className="flex items-center gap-2">
               <ModeToggle />
 
               {userId == null ? (
-                  <Link href='sign-in' className='btn-primary bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-8 items-center justify-center rounded px-4 py-2 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50'>
+                  <Link href='sign-in' className='bg-primary text-white text-sm py-1 px-4 rounded shadow'>
                     Sign In
                   </Link>
                 ) : (                  
