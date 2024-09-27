@@ -66,12 +66,17 @@ export const PatientForm = () => {
 
   if (!user) {
     return <div>
-       <div className="container w-full flex justify-center items-center">
+       <div className="container w-full m-auto my-5 max-w-2xl flex justify-center items-center">
             <div className="flex flex-col items-center justify-center w-full border border-gray-200 rounded-lg shadow-lg p-6">
               <div className="mb-6">
-                <Lottie animationData={animationData} loop={false} />
+                <Image 
+                      src="/assets/images/img-2.jpg"
+                      alt="register"
+                      height={400}
+                      width={400}
+                  />
               </div>
-              <div className="text-center">
+              <div className="text-center mb-5">
                 <h2 className="text-2xl font-semibold mb-2">
                   Preparing Your Registration
                 </h2>

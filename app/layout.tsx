@@ -52,9 +52,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             disableTransitionOnChange
           >
             <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
+              {/* <SiteHeader /> */}
                 <div className="flex-1">{children}</div>
-              <SiteFooter />
+              {/* <SiteFooter /> */}
             </div>
             <Toaster />
             <TailwindIndicator />

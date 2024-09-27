@@ -7,7 +7,7 @@ import animationData from "@/assets/animation1.json";
 
 const SignInPage = () => {
   return (
-    <div className="relative h-screen w-full bg-cover bg-center py-5" style={{ backgroundImage: 'url(/assets/images/appointment-img.png)' }}>
+    <div className="relative h-screen w-full bg-center" style={{ backgroundImage: 'url(/assets/images/bg2.jpg)' }}>
       <div className="absolute inset-0  opacity-50"></div>
         <div className='flex w-full justify-center'>
           <div className="p-4 text-card-foreground">

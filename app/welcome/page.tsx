@@ -2,9 +2,14 @@
 
 import { useUser } from "@clerk/nextjs";
 import { motion } from "framer-motion";
+import { Calendar, Clock, Phone } from "lucide-react"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+
+import Footer from "@/components/footer"
+import SiteHeader from "@/components/site-header"
+import { Button } from "@/components/ui/button"
 
 export const Welcome = () => {
   const categories = [
@@ -34,83 +39,88 @@ export const Welcome = () => {
 
   return (
     <div className="p-1">
-      <div className="w-full py-7 dark:text-white">
-        <div className="container max-w-6xl px-8 mt-4 mx-auto xl:px-5">
-          <div className="flex flex-wrap items-center sm:-mx-3">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              className="w-full md:w-1/2 md:px-3"
-            >
-              <div className="space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0">
-                <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-                  <span className="block xl:inline">
-                    Expert Health Consultations
-                  </span>
-                  <br />
-                  <span className="block text-green-500 xl:inline">
-                    For Better Well being.
-                  </span>
-                </h1>
-                <p className="text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
-                  Discover the best tools and services to improve your health
-                  with our expert consultations.
-                </p>
-                <div className="flex w-full items-center justify-start gap-2 py-2">
-                  <a
-                    href="/sign-in"
-                    className="px-7 py-2.5 rounded-lg relative group text-white font-medium inline-block mb-2 sm:mb-0"
-                  >
-                    <span className="absolute top-0 left-0 size-full rounded opacity-50 blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
-                    <span className="size-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br group-active:opacity-0 rounded-lg opacity-50 from-purple-600 to-blue-500"></span>
-                    <span className="absolute inset-0 size-full transition-all duration-200 ease-out rounded-lg shadow-xl bg-gradient-to-br group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
-                    <span className="absolute inset-0 size-full transition duration-200 ease-out rounded-lg bg-gradient-to-br to-purple-600 from-blue-500"></span>
-                    <span className="relative text-lg">
-                      Get Started{" "}
-                      <svg
-                        className="size-4 ml-1 inline"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          
-                        ></path>
-                      </svg>
-                    </span>
-                  </a>
+       <motion.div
+          variants={{
+            hidden: { opacity: 0, y: -20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="animate_top w-full"
+        >
+          <SiteHeader />
 
-                  <a
-                    href="#_"
-                    className="flex items-center justify-center px-6 py-3 text-gray-500 transition duration-200 bg-gray-200 border rounded-md hover:bg-gray-300 hover:text-gray-600"
-                  >
-                    Learn More
-                  </a>
-                </div>
-
+      </motion.div>
+      <div className="w-full py-12 md:py-10  bg-gradient-to-b from-white to-blue-50">
+      <div className="container px-4 md:px-6">
+        <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
+          <div className="flex flex-col justify-center space-y-4">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                Your Health, Our Priority
+              </h1>
+              <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+                Book your doctors appointment with ease. Fast, secure, and convenient scheduling at your fingertips.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button size="lg" className="inline-flex items-center justify-center">
+                Book Appointment
+              </Button>
+              <Button variant="outline" size="lg" className="inline-flex items-center justify-center">
+                Learn More
+              </Button>
+            </div>
+            <div className="flex flex-col gap-2 text-sm text-gray-500 md:flex-row md:gap-8 md:text-base">
+              <div className="flex items-center gap-1">
+                <Calendar className="size-4" />
+                <span>Easy Scheduling</span>
               </div>
-            </motion.div>
+              <div className="flex items-center gap-1">
+                <Clock className="size-4" />
+                <span>24/7 Availability</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <Phone className="size-4" />
+                <span>Reminders & Support</span>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="relative size-[280px] sm:size-[350px] md:size-[400px] lg:size-[500px]">
             <motion.div
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="w-full mt-10 md:w-1/2 md:mt-0"
+              className=""
             >
               <Image
                 src="/assets/images/image-1.svg"
                 alt="Health Consultation"
-                width={700}
-                height={700}
+                width={600}
+                height={600}
                 className="object-cover w-full transition-transform duration-500 hover:scale-110"
               />
             </motion.div>
+            </div>
           </div>
         </div>
       </div>
-
+    </div>
+     
+    <motion.div
+        variants={{
+          hidden: { opacity: 0, y: -20 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: true }}
+        className="animate_top w-full"
+      >
       <div className="w-full py-7 px-4  dark:text-white">
         <div className="container-fluid max-w-6xl px-2 md:px-8 mx-auto xl:px-5">
           <div className="flex flex-col items-center justify-between gap-2 md:gap-8">
@@ -165,7 +175,19 @@ export const Welcome = () => {
           </div>
         </div>
       </div>
+      </motion.div>
 
+      <motion.div
+          variants={{
+            hidden: { opacity: 0, y: -20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="animate_top w-full"
+        >
       <div className="w-full py-7 dark:text-white">
         <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
           <motion.div
@@ -220,6 +242,19 @@ export const Welcome = () => {
           </motion.div>
         </div>
       </div>
+      </motion.div>
+
+      <motion.div
+          variants={{
+            hidden: { opacity: 0, y: -20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="animate_top w-full"
+        >
       <div className="w-full py-7 dark:text-white">
         <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
           <motion.div
@@ -276,7 +311,19 @@ export const Welcome = () => {
           </motion.div>
         </div>
       </div>
+      </motion.div>
 
+      <motion.div
+          variants={{
+            hidden: { opacity: 0, y: -20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="animate_top w-full"
+        >
       <div className="w-full py-7 px-4  dark:text-white">
         <div className="container-fluid max-w-6xl px-2 md:px-8 mx-auto xl:px-5">
           <div className="flex flex-col items-center justify-between gap-8">
@@ -342,7 +389,19 @@ export const Welcome = () => {
           </div>
         </div>
       </div>
+      </motion.div>
 
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: -20 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="animate_top"
+      >
       <div className="w-full py-7 dark:text-white">
         <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
           <motion.div
@@ -426,6 +485,19 @@ export const Welcome = () => {
           </motion.div>
         </div>
       </div>
+      </motion.div>
+
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: -20 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 1, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="animate_top"
+      >
       <div className="w-full py-7 dark:text-white">
         <div className="container max-w-6xl px-1 md:px-8 mx-auto xl:px-5">
           <div className="flex flex-col space-y-2 text-center mt-4">
@@ -547,6 +619,8 @@ export const Welcome = () => {
           </div>
         </div>
       </div>
+      </motion.div>
+      <Footer />
     </div>
   );
 };

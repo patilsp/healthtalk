@@ -1,6 +1,8 @@
 {
-    "cSpell.words": [
-        "setisloading",
-        "Telemedicine"
-    ]
+  "cSpell.words": [
+    "setisloading",
+    "Telemedicine"
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
